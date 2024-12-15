@@ -14,6 +14,9 @@
     <meta property="og:url" content="https://ay-ctrl.github.io/WEBSITE/">
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 
+    
+    
+
 </head>
 
 <body class="main page-loading animation">
@@ -50,7 +53,7 @@
 
         <!-- Login Button -->
         <div class="auth-buttons">
-            <a href="https://ay-ctrl.github.io/WEBSITE/public/giris.html" class="giris-btn">Giriş Yap</a>
+            <a href="https://ay-ctrl.github.io/WEBSITE/public/giris.html" class="giris-btn" id="loginButton">Giriş Yap</a>
         </div>
     </header>
 
@@ -305,5 +308,27 @@
         </a>
     </div>
 
+    <script>
+        // Login butonuna tıklandığında çalışacak kod
+        document.getElementById('loginButton').addEventListener('click', function(event) {
+            event.preventDefault(); // Linkin yönlendirmesini engeller
+
+            // Sunucuya gönderilecek istek
+            fetch('http://localhost:3000/requests', {
+                method: 'POST', // veya 'GET' isterseniz
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: 'Giriş yapıldı' }) // Göndereceğiniz veri
+            })
+            .then(response => response.json())  // Sunucudan gelen yanıtı JSON formatında alıyoruz
+            .then(data => {
+                console.log('İstek başarıyla gönderildi ve cevap alındı:', data);
+            })
+            .catch(error => {
+                console.error('Bir hata oluştu:', error);
+            });
+        });
+    </script>
 
 </body>
