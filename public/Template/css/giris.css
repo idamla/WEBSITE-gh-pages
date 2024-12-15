@@ -157,6 +157,7 @@ h1 {
     border-radius: 4px;
     font-size: 16px;
     outline: none;
+    color: black;
 }
 
 .form label {

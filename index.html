@@ -24,7 +24,7 @@
     <header>
         <!-- Logo -->
         <div class="logo">
-            <a href="https://ay-ctrl.github.io/WEBSITE/">
+            <a href="index.html">
                 <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
                     width="150">
             </a>
@@ -33,18 +33,18 @@
         <!-- Navigation -->
         <nav>
             <ul>
-                <li><a href="https://ay-ctrl.github.io/WEBSITE/public/talepOlustur.html">Talep Oluştur</a></li>
-                <li><a href="https://ay-ctrl.github.io/WEBSITE/public/talepSorgula.html">Talep Sorgula</a></li>
-                <li><a href="https://ay-ctrl.github.io/WEBSITE/public/products.html">Aksesuar ve Ek
+                <li><a href="public/talepOlustur.html">Talep Oluştur</a></li>
+                <li><a href="public/talepSorgula.html">Talep Sorgula</a></li>
+                <li><a href="public/products.html">Aksesuar ve Ek
                         Ürünler</a></li>
                 <li class="dropdown">
                     <a href="">Hakkımızda</a>
                     <div class="dropdown-content">
-                        <a href="https://ay-ctrl.github.io/WEBSITE/public/SSS.html">SSS</a>
-                        <a href="https://ay-ctrl.github.io/WEBSITE/public/medya.html">Medya ve Fotoğraflar</a>
+                        <a href="public/SSS.html">SSS</a>
+                        <a href="public/medya.html">Medya ve Fotoğraflar</a>
                         <!-- URL ADRESİ YAZDIĞIN YERLEİ SONRADAN DEĞİŞTİRMEN GEREKECEK -->
-                        <a href="https://ay-ctrl.github.io/WEBSITE/public/yorumlar.html">Yorumlar</a>
-                        <a href="https://ay-ctrl.github.io/WEBSITE/public/iletisim.html">İletişim</a>
+                        <a href="public/yorumlar.html">Yorumlar</a>
+                        <a href="public/iletisim.html">İletişim</a>
                     </div>
 
 
@@ -53,7 +53,7 @@
 
         <!-- Login Button -->
         <div class="auth-buttons">
-            <a href="https://ay-ctrl.github.io/WEBSITE/public/giris.html" class="giris-btn" id="loginButton">Giriş Yap</a>
+            <a href="public/giris.html" class="giris-btn">Giriş Yap</a>
         </div>
     </header>
 
@@ -308,27 +308,7 @@
         </a>
     </div>
 
-    <script>
-        // Login butonuna tıklandığında çalışacak kod
-        document.getElementById('loginButton').addEventListener('click', function(event) {
-            event.preventDefault(); // Linkin yönlendirmesini engeller
-
-            // Sunucuya gönderilecek istek
-            fetch('http://localhost:3000/requests', {
-                method: 'POST', // veya 'GET' isterseniz
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message: 'Giriş yapıldı' }) // Göndereceğiniz veri
-            })
-            .then(response => response.json())  // Sunucudan gelen yanıtı JSON formatında alıyoruz
-            .then(data => {
-                console.log('İstek başarıyla gönderildi ve cevap alındı:', data);
-            })
-            .catch(error => {
-                console.error('Bir hata oluştu:', error);
-            });
-        });
-    </script>
+  
+    
 
 </body>
