@@ -65,8 +65,8 @@
         <div class="container">
             <h1>TALEP SORGULA</h1>
             <div class="search-box">
-                <input type="text" placeholder="Talep numaranızı giriniz!">
-                <button>SORGULA</button>
+                <input id="queryNumInput" type="text" placeholder="Talep numaranızı giriniz!">
+                <button id="searchButton">SORGULA</button>
             </div>
         </div>
     </div>
@@ -126,6 +126,44 @@
         </a>
     </div>
 
+    <script>
+        document.getElementById('searchButton').addEventListener('click', async () => {
+            const queryNum = document.getElementById('queryNumInput').value;
+    
+            if (!queryNum) {
+                alert("Lütfen bir talep numarası girin.");
+                return;
+            }
+    
+            try {
+                const response = await fetch('http://localhost:3000/api/repairRequests/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ queryNum })
+                });
+    
+                const data = await response.json();
+    
+                if (data.success) {
+                    // Talep verilerini localStorage'a kaydet
+                    localStorage.setItem('repairRequestData', JSON.stringify(data.data));
+    
+                    // Başka sayfaya yönlendir
+                    window.location.href = 'talepSorgula.html'; // Talep sonucu sayfasına yönlendir
+                } else {
+                    alert(data.message); // Talep bulunamazsa hata mesajı
+                }
+            } catch (error) {
+                console.error(error);
+                alert('Bir hata oluştu.');
+            }
+        });
+    </script>
+
 </body>
+
+
 
 </html>

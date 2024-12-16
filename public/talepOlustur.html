@@ -61,7 +61,7 @@
 
     <!-- Talep Oluştur -->
     <section id="talepOlustur">
-        <form action="talepOlustur2.html" method="POST">
+        <form id="requestForm">
             <!--action bağlantısını talepOlustur2 ekranına yönlendir.-->
             <h1>Talep Oluştur</h1>
             <label for="model">Telefon Modeliniz:</label>
@@ -113,6 +113,7 @@
             <input type="submit" value="Talep Gönder">
         </form>
         </div>
+        
     </section>
 
     <!-- Footer -->
@@ -168,6 +169,43 @@
             <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454733_640.png" alt="Mesajlaşma İkonu">
         </a>
     </div>
+
+    <script>
+        const form = document.getElementById('requestForm');
+    
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Formun varsayılan davranışını engelle
+    
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries()); // Form verilerini bir nesneye çevir
+    
+            try {
+                const response = await fetch('http://localhost:3000/api/repairRequests', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+    
+                if (response.ok) {
+                    // Sunucuya başarılı şekilde gönderildi
+                    alert('Talebiniz başarıyla oluşturuldu!');
+                    const responseData = await response.json(); // Sunucudan gelen yanıtı al
+
+                    const queryNum = responseData.queryNum; 
+                    
+                    localStorage.setItem("queryNum",queryNum);
+                    window.location.href = 'talepOlustur2.html'; // Yönlendirme
+                } else {
+                    throw new Error('Sunucudan bir hata alındı.');
+                }
+            } catch (error) {
+                alert('Bir hata oluştu: ' + error.message);
+            }
+        });
+    </script>
+    
 
 </body>
 

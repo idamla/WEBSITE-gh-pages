@@ -132,34 +132,40 @@
         </a>
     </div>
 
+   
     <script>
-        // "Giriş Yap" butonuna tıklanması durumunda çalışacak fonksiyon
         document.getElementById('loginButton').addEventListener('click', async (e) => {
-            e.preventDefault();  // Formun varsayılan submit işlemini engelle
-
+            e.preventDefault(); // Formun varsayılan submit işlemini engelle
+    
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-
-            // Form verilerini JSON formatında backend'e gönderiyoruz
+    
             try {
-                const response = await fetch('http://localhost:3000/api/users', {
+                // Backend'e login isteği gönder
+                const response = await fetch('http://localhost:3000/api/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({
-                        username: username,
-                        password: password,
-                    }),
+                    body: JSON.stringify({ username, password }), // Kullanıcı adı ve şifreyi gönderiyoruz
                 });
-
-                const data = await response.text(); // Sunucudan gelen yanıtı al
-                console.log('Sunucudan gelen yanıt:', data); // Konsola yazdır
+    
+                // Sunucudan gelen yanıta göre işlem yap
+                if (response.ok) {
+                    const data = await response.json(); // JSON formatında gelen yanıtı çözümle
+                    alert('Giriş başarılı! ' + data.message); // Başarılı giriş mesajı
+                    window.location.href = 'dashboard.html'; 
+                } else {
+                    const errorText = await response.json(); // Hata mesajını JSON olarak al
+                    alert('Hata: ' + errorText.message); // Hata mesajını göster
+                }
             } catch (error) {
-                console.error('Hata:', error); // Hata durumunda konsola yazdır
+                console.error('Hata:', error);
+                alert('Sunucuya bağlanırken bir hata oluştu.');
             }
         });
     </script>
+    
 
 </body>
 

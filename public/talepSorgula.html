@@ -62,37 +62,38 @@
     <div class="container">
         <h1>TALEP SORGULA</h1>
         <div class="table-container">
-            <table>
+            <table id="resultTable" style="display:none;">
                 <tr>
                     <td><b>Müşteri Adı</b></td>
-                    <td>Mişterinin Ad ve Soyad Bilgileri</td>
+                    <td id="customerName"></td>
                 </tr>
                 <tr>
                     <td><b>Müşteri Telefonu</b></td>
-                    <td>0XXX XXX XX XX</td>
+                    <td id="customerPhone"></td>
                 </tr>
                 <tr>
                     <td><b>Müşteri Adresi</b></td>
-                    <td>Adres Bilgileri</td>
+                    <td id="customerAddress"></td>
                 </tr>
                 <tr>
                     <td><b>Problem Açıklaması</b></td>
-                    <td>Karşılaşılan Problemin Detyalı Açıklaması</td>
+                    <td id="problemDescription"></td>
                 </tr>
                 <tr>
                     <td><b>Kayıt Tarihi</b></td>
-                    <td>XX/XX/XXXX</td>
+                    <td id="createdAt"></td>
                 </tr>
                 <tr>
                     <td><b>Durum</b></td>
-                    <td>Cihazın Genel Durumu ve Tamir Süreci Hakkında Bilgilendirme</td>
+                    <td id="status"></td>
                 </tr>
                 <tr>
                     <td><b>Fiyat</b></td>
-                    <td>XXXX,XX TL</td>
+                    <td id="price"></td>
                 </tr>
             </table>
         </div>
+    </div>
 
         <div class="message-container">
             <h2><b>Teknisyene Mesaj</b></h2>
@@ -158,6 +159,27 @@
             <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454733_640.png" alt="Mesajlaşma İkonu">
         </a>
     </div>
+
+    <script>
+        // Sayfa yüklendiğinde localStorage'dan veriyi al
+        const repairRequestData = JSON.parse(localStorage.getItem('repairRequestData'));
+    
+        if (repairRequestData) {
+            // Veriyi tabloya doldur
+            document.getElementById('customerName').textContent = repairRequestData.name;
+            document.getElementById('customerPhone').textContent = repairRequestData.phone;
+            document.getElementById('customerAddress').textContent = repairRequestData.adress;
+            document.getElementById('problemDescription').textContent = repairRequestData.sorunlar.join(', ');
+            document.getElementById('createdAt').textContent = new Date(repairRequestData.createdAt).toLocaleDateString();
+            document.getElementById('status').textContent = repairRequestData.state || 'Bilinmiyor';
+            document.getElementById('price').textContent = repairRequestData.price || 'Belirlenmedi';
+    
+            // Tabloyu göster
+            document.getElementById('resultTable').style.display = 'table';
+        } else {
+            alert('Talep verisi bulunamadı.');
+        }
+    </script>
 
 </body>
 

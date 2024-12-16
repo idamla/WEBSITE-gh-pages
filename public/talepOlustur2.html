@@ -36,7 +36,7 @@
         <nav>
             <ul>
                 <li><a href="talepOlustur.html">Talep Oluştur</a></li>
-                <li><a href="talepSorgula.html">Talep Sorgula</a></li>
+                <li><a href="talepSorgula2.html">Talep Sorgula</a></li>
                 <li><a href="products.html">Aksesuar ve Ek
                         Ürünler</a></li>
                 <li class="dropdown">
@@ -63,7 +63,7 @@
     <section id="talepSonuc">
         <div class="content">
             <h1>Talebiniz Alındı!</h1>
-            <p>Talep Sorgulama Numaranız: <span id="talepNo">TK-123456</span></p>
+            <p>Talep Sorgulama Numaranız: <span id="talepNo">ayse</span></p>
             <!--TALEP SORGULAMA BAĞLANTISINI YAP -->
 
         </div>
@@ -122,6 +122,18 @@
             <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454733_640.png" alt="Mesajlaşma İkonu">
         </a>
     </div>
+
+    <script>
+        // Talep numarasını localStorage'dan al
+        const queryNum = window.localStorage.getItem('queryNum');
+    
+        if (queryNum) {
+            // Talep numarasını sayfada göster
+            document.getElementById('talepNo').textContent = queryNum;
+        } else {
+            alert('Talep numarası bulunamadı.');
+        }
+    </script>
 
 </body>
 
