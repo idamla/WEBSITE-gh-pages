@@ -15,18 +15,18 @@
     <meta property="og:title" content="Uygun Fiyatlarla Akıllı Cihaz Tamir Hizmeti Sizlerle">
     <meta property="og:description" content=" Hızlı ve güvenilir tamir için hemen ulaşın.">
     <meta property="og:url" content="https://telefon-tamiri-seng209-211.com.tr/">
-    <link rel="stylesheet" href="Template/css/talepSorgula2.css">
+    <link rel="stylesheet" href="../css/talepSorgula.css">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
 
 <body class="main page-loading animation">
-    <!-- Header -->
+           <!-- Header -->
     <header>
         <!-- Logo -->
         <div class="logo">
-            <a href="../index.html">
+            <a href="../../../index.html">
                 <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
                     width="150">
             </a>
@@ -39,17 +39,8 @@
                 <li><a href="talepSorgula.html">Talep Sorgula</a></li>
                 <li><a href="products.html">Aksesuar ve Ek
                         Ürünler</a></li>
-                <li class="dropdown">
-                    <a href="">Hakkımızda</a>
-                    <div class="dropdown-content">
-                        <a href="SSS.html">SSS</a>
-                        <a href="medya.html">Medya ve Fotoğraflar</a>
-                        <!-- URL ADRESİ YAZDIĞIN YERLEİ SONRADAN DEĞİŞTİRMEN GEREKECEK -->
-                        <a href="yorumlar.html">Yorumlar</a>
-                        <a href="iletisim.html">İletişim</a>
-                    </div>
-
-
+                        <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                        <li><a href="SSS.html">SSS</a></li>
             </ul>
         </nav>
 
@@ -59,17 +50,46 @@
         </div>
     </header>
 
-    <!--ŞİMDİ ŞÖYLE BİR SORUN VAR SORGULAMA NO YAZACAĞIM YERE TIKLAMAMA İZİN VERMİYO NORMALDE BUNU HTML VE CSS KODLARI İLE YAPABİLMEM LAZIM AMA OLMADI JS KODLARIYLA OLUR MU BİLEMİYORUM SORUNU ÇÖZEMEDİM DAHA -->
-
-    <div class="header">
-        <div class="container">
-            <h1>TALEP SORGULA</h1>
-            <div class="search-box">
-                <input id="queryNumInput" type="text" placeholder="Talep numaranızı giriniz!">
-                <button id="searchButton">SORGULA</button>
-            </div>
+    <div class="container">
+        <h1>TALEP SORGULA</h1>
+        <div class="table-container">
+            <table id="resultTable" style="display:none;">
+                <tr>
+                    <td><b>Müşteri Adı</b></td>
+                    <td id="customerName"></td>
+                </tr>
+                <tr>
+                    <td><b>Müşteri Telefonu</b></td>
+                    <td id="customerPhone"></td>
+                </tr>
+                <tr>
+                    <td><b>Müşteri Adresi</b></td>
+                    <td id="customerAddress"></td>
+                </tr>
+                <tr>
+                    <td><b>Problem Açıklaması</b></td>
+                    <td id="problemDescription"></td>
+                </tr>
+                <tr>
+                    <td><b>Kayıt Tarihi</b></td>
+                    <td id="createdAt"></td>
+                </tr>
+                <tr>
+                    <td><b>Durum</b></td>
+                    <td id="status"></td>
+                </tr>
+                <tr>
+                    <td><b>Fiyat</b></td>
+                    <td id="price"></td>
+                </tr>
+            </table>
         </div>
     </div>
+
+    </div>
+
+
+
 
 
     <!-- Footer -->
@@ -127,43 +147,26 @@
     </div>
 
     <script>
-        document.getElementById('searchButton').addEventListener('click', async () => {
-            const queryNum = document.getElementById('queryNumInput').value;
+        // Sayfa yüklendiğinde localStorage'dan veriyi al
+        const repairRequestData = JSON.parse(localStorage.getItem('repairRequestData'));
     
-            if (!queryNum) {
-                alert("Lütfen bir talep numarası girin.");
-                return;
-            }
+        if (repairRequestData) {
+            // Veriyi tabloya doldur
+            document.getElementById('customerName').textContent = repairRequestData.name;
+            document.getElementById('customerPhone').textContent = repairRequestData.phone;
+            document.getElementById('customerAddress').textContent = repairRequestData.adress;
+            document.getElementById('problemDescription').textContent = repairRequestData.sorunlar.join(', ');
+            document.getElementById('createdAt').textContent = new Date(repairRequestData.createdAt).toLocaleDateString();
+            document.getElementById('status').textContent = repairRequestData.state || 'Bilinmiyor';
+            document.getElementById('price').textContent = repairRequestData.price || 'Belirlenmedi';
     
-            try {
-                const response = await fetch('http://localhost:3000/api/repairRequests/search', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ queryNum })
-                });
-    
-                const data = await response.json();
-    
-                if (data.success) {
-                    // Talep verilerini localStorage'a kaydet
-                    localStorage.setItem('repairRequestData', JSON.stringify(data.data));
-    
-                    // Başka sayfaya yönlendir
-                    window.location.href = 'talepSorgula.html'; // Talep sonucu sayfasına yönlendir
-                } else {
-                    alert(data.message); // Talep bulunamazsa hata mesajı
-                }
-            } catch (error) {
-                console.error(error);
-                alert('Bir hata oluştu.');
-            }
-        });
+            // Tabloyu göster
+            document.getElementById('resultTable').style.display = 'table';
+        } else {
+            alert('Talep verisi bulunamadı.');
+        }
     </script>
 
 </body>
-
-
 
 </html>

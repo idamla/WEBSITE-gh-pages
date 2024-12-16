@@ -15,91 +15,50 @@
     <meta property="og:title" content="Uygun Fiyatlarla Akıllı Cihaz Tamir Hizmeti Sizlerle">
     <meta property="og:description" content=" Hızlı ve güvenilir tamir için hemen ulaşın.">
     <meta property="og:url" content="https://telefon-tamiri-seng209-211.com.tr/">
-    <link rel="stylesheet" href="Template/css/talepSorgula.css">
+    <link rel="stylesheet" href="../css/talepOlustur2.css">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
 
 <body class="main page-loading animation">
-    <!-- Header -->
-    <header>
-        <!-- Logo -->
-        <div class="logo">
-            <a href="../index.html">
-                <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
-                    width="150">
-            </a>
+        <!-- Header -->
+        <header>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="../../../index.html">
+                    <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
+                        width="150">
+                </a>
+            </div>
+    
+            <!-- Navigation -->
+            <nav>
+                <ul>
+                    <li><a href="talepOlustur.html">Talep Oluştur</a></li>
+                    <li><a href="talepSorgula.html">Talep Sorgula</a></li>
+                    <li><a href="products.html">Aksesuar ve Ek
+                            Ürünler</a></li>
+                            <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                            <li><a href="SSS.html">SSS</a></li>
+                </ul>
+            </nav>
+    
+            <!-- Login Button -->
+            <div class="auth-buttons">
+                <a href="giris.html" class="giris-btn">Giriş Yap</a>
+            </div>
+        </header>
+
+    <!-- Talep Sonuç -->
+    <section id="talepSonuc">
+        <div class="content">
+            <h1>Talebiniz Alındı!</h1>
+            <p>Talep Sorgulama Numaranız: <span id="talepNo">ayse</span></p>
+            <!--TALEP SORGULAMA BAĞLANTISINI YAP -->
+
         </div>
-
-        <!-- Navigation -->
-        <nav>
-            <ul>
-                <li><a href="talepOlustur.html">Talep Oluştur</a></li>
-                <li><a href="talepSorgula.html">Talep Sorgula</a></li>
-                <li><a href="products.html">Aksesuar ve Ek
-                        Ürünler</a></li>
-                <li class="dropdown">
-                    <a href="">Hakkımızda</a>
-                    <div class="dropdown-content">
-                        <a href="SSS.html">SSS</a>
-                        <a href="medya.html">Medya ve Fotoğraflar</a>
-                        <!-- URL ADRESİ YAZDIĞIN YERLEİ SONRADAN DEĞİŞTİRMEN GEREKECEK -->
-                        <a href="yorumlar.html">Yorumlar</a>
-                        <a href="iletisim.html">İletişim</a>
-                    </div>
-
-
-            </ul>
-        </nav>
-
-        <!-- Login Button -->
-        <div class="auth-buttons">
-            <a href="giris.html" class="giris-btn">Giriş Yap</a>
-        </div>
-    </header>
-
-    <div class="container">
-        <h1>TALEP SORGULA</h1>
-        <div class="table-container">
-            <table id="resultTable" style="display:none;">
-                <tr>
-                    <td><b>Müşteri Adı</b></td>
-                    <td id="customerName"></td>
-                </tr>
-                <tr>
-                    <td><b>Müşteri Telefonu</b></td>
-                    <td id="customerPhone"></td>
-                </tr>
-                <tr>
-                    <td><b>Müşteri Adresi</b></td>
-                    <td id="customerAddress"></td>
-                </tr>
-                <tr>
-                    <td><b>Problem Açıklaması</b></td>
-                    <td id="problemDescription"></td>
-                </tr>
-                <tr>
-                    <td><b>Kayıt Tarihi</b></td>
-                    <td id="createdAt"></td>
-                </tr>
-                <tr>
-                    <td><b>Durum</b></td>
-                    <td id="status"></td>
-                </tr>
-                <tr>
-                    <td><b>Fiyat</b></td>
-                    <td id="price"></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    </div>
-
-
-
-
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -156,23 +115,14 @@
     </div>
 
     <script>
-        // Sayfa yüklendiğinde localStorage'dan veriyi al
-        const repairRequestData = JSON.parse(localStorage.getItem('repairRequestData'));
+        // Talep numarasını localStorage'dan al
+        const queryNum = window.localStorage.getItem('queryNum');
     
-        if (repairRequestData) {
-            // Veriyi tabloya doldur
-            document.getElementById('customerName').textContent = repairRequestData.name;
-            document.getElementById('customerPhone').textContent = repairRequestData.phone;
-            document.getElementById('customerAddress').textContent = repairRequestData.adress;
-            document.getElementById('problemDescription').textContent = repairRequestData.sorunlar.join(', ');
-            document.getElementById('createdAt').textContent = new Date(repairRequestData.createdAt).toLocaleDateString();
-            document.getElementById('status').textContent = repairRequestData.state || 'Bilinmiyor';
-            document.getElementById('price').textContent = repairRequestData.price || 'Belirlenmedi';
-    
-            // Tabloyu göster
-            document.getElementById('resultTable').style.display = 'table';
+        if (queryNum) {
+            // Talep numarasını sayfada göster
+            document.getElementById('talepNo').textContent = queryNum;
         } else {
-            alert('Talep verisi bulunamadı.');
+            alert('Talep numarası bulunamadı.');
         }
     </script>
 

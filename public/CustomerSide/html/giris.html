@@ -15,8 +15,7 @@
     <meta property="og:title" content="Uygun Fiyatlarla Akıllı Cihaz Tamir Hizmeti Sizlerle">
     <meta property="og:description" content=" Hızlı ve güvenilir tamir için hemen ulaşın.">
     <meta property="og:url" content="https://telefon-tamiri-seng209-211.com.tr/">
-    <link rel="stylesheet" href="Template/css/talepOlustur.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../css/giris.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
@@ -26,7 +25,7 @@
     <header>
         <!-- Logo -->
         <div class="logo">
-            <a href="../index.html">
+            <a href="../../../index.html">
                 <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
                     width="150">
             </a>
@@ -36,20 +35,11 @@
         <nav>
             <ul>
                 <li><a href="talepOlustur.html">Talep Oluştur</a></li>
-                <li><a href="talepSorgula2.html">Talep Sorgula</a></li>
+                <li><a href="talepSorgula.html">Talep Sorgula</a></li>
                 <li><a href="products.html">Aksesuar ve Ek
                         Ürünler</a></li>
-                <li class="dropdown">
-                    <a href="">Hakkımızda</a>
-                    <div class="dropdown-content">
-                        <a href="SSS.html">SSS</a>
-                        <a href="medya.html">Medya ve Fotoğraflar</a>
-                        <!-- URL ADRESİ YAZDIĞIN YERLEİ SONRADAN DEĞİŞTİRMEN GEREKECEK -->
-                        <a href="yorumlar.html">Yorumlar</a>
-                        <a href="iletisim.html">İletişim</a>
-                    </div>
-
-
+                <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                <li><a href="SSS.html">SSS</a></li>
             </ul>
         </nav>
 
@@ -59,62 +49,25 @@
         </div>
     </header>
 
-    <!-- Talep Oluştur -->
-    <section id="talepOlustur">
-        <form id="requestForm">
-            <!--action bağlantısını talepOlustur2 ekranına yönlendir.-->
-            <h1>Talep Oluştur</h1>
-            <label for="model">Telefon Modeliniz:</label>
-            <input id="model" type="text" name="model" placeholder="Örn: iPhone 16" required>
+    <div class="container">
+        <h1>GİRİŞ YAP</h1>
+        <div class="form">
+            <label for="username">Vergi No veya TC Kimlik No</label>
+            <input type="text" id="username" placeholder="Vergi No veya TC Kimlik No">
 
-            <label for="name">Adınız Soyadınız:</label>
-            <input id="name" type="text" name="name" placeholder="Adınızı ve Soyadınızı girin" required>
+            <label for="password">Şifre</label>
+            <input type="password" id="password" placeholder="Şifre">
 
-            <label for="number">Telefon Numaranız:</label>
-            <input id="number" type="tel" name="phone" placeholder="Örn: 0555 555 55 55" required>
-
-            <label for="adres">Adres:</label>
-            <textarea id="adres" name="adress" placeholder="Adresinizi girin" rows="4" required></textarea>
-
-            <!-- Sorun Seçimi Açılır Menü -->
-            <label for="sorunlar">Karşılaşılan Sorun:</label>
-            <select id="sorunlar" name="sorunlar" multiple>
-                <option value="Ekran">Ekran Sorunları</option>
-                <option value="Batarya">Batarya Sorunları</option>
-                <option value="Ses">Ses Sorunları</option>
-                <option value="Kamera">Kamera Sorunları</option>
-                <option value="Tus">Tuş Sorunları</option>
-                <option value="Ag">Ağ/Bağlantı Sorunlar</option>
-                <option value="Kozmetik">Kozmetik Sorunları</option>
-                <option value="Titreşim">Titreşim Sorunları</option>
-                <option value="Sıvı">Sıvı Teması</option>
-                <option value="Cam">Cam Değişimi</option>
-                <option value="Diğer">Diğer</option>
-            </select>
-
-            <label for="imei">Cihazın IMEI Numarası (İsteğe Bağlı):</label>
-            <input id="imei" type="text" name="imei" placeholder="15 haneli IMEI numarası">
-
-            <label for="kilit">Cihazın Tuş Kilidi (Varsa):</label>
-            <input id="kilit" type="text" name="kilit" placeholder="Varsa tuş kilidi şifresi">
-
-            <div class="radio-group">
-                <p>Yedek Cihaz İstiyor Musunuz?</p>
-                <label>
-                    <input type="radio" name="yedek-cihaz" value="evet">
-                    Evet
-                </label>
-                <label>
-                    <input type="radio" name="yedek-cihaz" value="hayir">
-                    Hayır
-                </label>
+            <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Beni Hatırla</label>
             </div>
-            <br><br>
-            <input type="submit" value="Talep Gönder">
-        </form>
+
+            <a href="#">Parolamı unuttum</a>
+
+            <button type="submit" id="loginButton">GİRİŞ YAP</button>
         </div>
-        
-    </section>
+    </div>
+
 
     <!-- Footer -->
     <footer>
@@ -170,38 +123,36 @@
         </a>
     </div>
 
+   
     <script>
-        const form = document.getElementById('requestForm');
+        document.getElementById('loginButton').addEventListener('click', async (e) => {
+            e.preventDefault(); // Formun varsayılan submit işlemini engelle
     
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Formun varsayılan davranışını engelle
-    
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries()); // Form verilerini bir nesneye çevir
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
     
             try {
-                const response = await fetch('http://localhost:3000/api/repairRequests', {
+                // Backend'e login isteği gönder
+                const response = await fetch('http://localhost:3000/api/login', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify({ username, password }), // Kullanıcı adı ve şifreyi gönderiyoruz
                 });
     
+                // Sunucudan gelen yanıta göre işlem yap
                 if (response.ok) {
-                    // Sunucuya başarılı şekilde gönderildi
-                    const responseData = await response.json(); // Sunucudan gelen yanıtı al
-
-                    const queryNum = responseData.queryNum; 
-                    
-                    localStorage.setItem("queryNum",queryNum);
-                    window.location.href = 'talepOlustur2.html'; // Yönlendirme
-                    alert('Talebiniz başarıyla oluşturuldu!');
+                    const data = await response.json(); // JSON formatında gelen yanıtı çözümle
+                    window.location.href = '../../UserSide/html/dashboard.html'; 
+                    alert('Giriş başarılı! ' + data.message); // Başarılı giriş mesajı
                 } else {
-                    throw new Error('Sunucudan bir hata alındı.');
+                    const errorText = await response.json(); // Hata mesajını JSON olarak al
+                    alert('Hata: ' + errorText.message); // Hata mesajını göster
                 }
             } catch (error) {
-                alert('Bir hata oluştu: ' + error.message);
+                console.error('Hata:', error);
+                alert('Sunucuya bağlanırken bir hata oluştu.');
             }
         });
     </script>
