@@ -153,8 +153,8 @@
                 // Sunucudan gelen yanıta göre işlem yap
                 if (response.ok) {
                     const data = await response.json(); // JSON formatında gelen yanıtı çözümle
-                    alert('Giriş başarılı! ' + data.message); // Başarılı giriş mesajı
                     window.location.href = 'dashboard.html'; 
+                    alert('Giriş başarılı! ' + data.message); // Başarılı giriş mesajı
                 } else {
                     const errorText = await response.json(); // Hata mesajını JSON olarak al
                     alert('Hata: ' + errorText.message); // Hata mesajını göster

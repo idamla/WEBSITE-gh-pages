@@ -36,7 +36,7 @@
         <nav>
             <ul>
                 <li><a href="talepOlustur.html">Talep Oluştur</a></li>
-                <li><a href="talepSorgula.html">Talep Sorgula</a></li>
+                <li><a href="talepSorgula2.html">Talep Sorgula</a></li>
                 <li><a href="products.html">Aksesuar ve Ek
                         Ürünler</a></li>
                 <li class="dropdown">
@@ -190,13 +190,13 @@
     
                 if (response.ok) {
                     // Sunucuya başarılı şekilde gönderildi
-                    alert('Talebiniz başarıyla oluşturuldu!');
                     const responseData = await response.json(); // Sunucudan gelen yanıtı al
 
                     const queryNum = responseData.queryNum; 
                     
                     localStorage.setItem("queryNum",queryNum);
                     window.location.href = 'talepOlustur2.html'; // Yönlendirme
+                    alert('Talebiniz başarıyla oluşturuldu!');
                 } else {
                     throw new Error('Sunucudan bir hata alındı.');
                 }
