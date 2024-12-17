@@ -7,128 +7,108 @@ body {
     color: #fff;
   }
   
-  /* Header */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-    /* Header altına hafif bir gölge */
-  }
-  
-  /* Header Container */
-  .header .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Logo */
-  header .logo img {
-    max-width: 120px;
-    /* Logo boyutunu biraz artırdım */
-  }
-  
-  /* Header ve Menü */
-  header nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 30px;
-    /* Menü arasındaki boşluğu artırdım */
-  }
-  
-  header nav ul li {
-    position: relative;
-    /* Dropdown'ın doğru konumlanabilmesi için */
-  }
-  
-  header nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 2rem;
-    /* Menü bağlantı yazı boyutunu büyüttüm */
-    font-weight: bold;
-    padding: 25px 30px;
-    /* İç boşluğu artırdım */
-  }
-  
-  header nav ul li:hover a {
-    background-color: #444;
-    /* Hover rengi */
-    color: #f0c040;
-  }
-  
-  header nav ul li .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    /* Menüye hemen altına yerleştir */
-    left: 0;
-    background-color: #333;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 10px 0;
-    min-width: 200px;
-    /* Genişlik */
-    z-index: 1000;
-  }
-  
-  /* Dropdown linklerinin stilleri */
-  header nav ul li .dropdown-content a {
-    color: white;
-    text-decoration: none;
-    padding: 15px 25px;
-    /* İç boşluğu artırdım */
-    display: block;
-    font-size: 1.8rem;
-    /* Dropdown bağlantı yazı boyutunu büyüttüm */
-    font-weight: normal;
-  }
-  
-  header nav ul li:hover .dropdown-content {
-    display: block;
-    /* Hover sırasında dropdown'ı göster */
-  }
-  
-  header nav ul li .dropdown-content a:hover {
-    background-color: #444;
-    /* Hover sırasında dropdown linki rengini değiştir */
-    color: #f0c040;
-    /* Hover rengini değiştirdim */
-  }
-  
-  
-  /* Giriş Butonu */
-  header .auth-buttons a {
-    font-size: 2rem;
-    /* Menü bağlantı yazı boyutunu büyüttüm */
-    /* Yazı boyutunu büyüttüm */
-    margin: 0 10px;
-    padding: 10px 25px;
-    /* Daha geniş buton */
-    text-decoration: none;
-    border-radius: 25px;
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-    transition: 0.3s;
-  }
-  
-  header .auth-buttons a:hover {
-    background-color: #f6c90e;
-    color: black;
-    border-color: black;
-  }
-  
-  
+ /* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Logo */
+header .logo img {
+  max-width: 120px;
+}
+
+/* Header ve Menü */
+header nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 30px; /* Menü arasındaki boşluğu artırdım */
+  align-items: center; /* Menü öğelerinin dikeyde hizalanması */
+}
+
+header nav ul li {
+  position: relative;
+}
+
+/* Menü bağlantıları */
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 25px 30px;
+}
+
+header nav ul li:hover a {
+  background-color: transparent;
+  color: #f0c040;
+  text-decoration: none;
+}
+
+/* Dropdown Menü */
+.dropdown {
+  position: relative;
+  display: inline-block; /* Dropdown'ı diğer öğelerle aynı satıra yerleştirir */
+}
+
+.dropdown-button {
+  background-color: transparent;
+  color: white;
+  padding: 25px 30px; /* Menü ile aynı padding'i kullanıyoruz */
+  font-size: 2rem; /* Menü ile aynı yazı boyutunu kullandım */
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* Dropdown Menü İçeriği */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: black;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+/* Dropdown Menü Öğeleri */
+.dropdown-content a {
+  color: white;
+  padding: 15px 30px; /* Menü öğelerindeki padding ile uyumlu */
+  text-decoration: none;
+  display: block;
+  font-size: 2rem; /* Menü ile uyumlu yazı boyutu */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+header nav ul li .dropdown-content a {
+  color: white !important; /* !important ile bu kuralın geçerli olmasını sağlıyoruz */
+}
+
+header nav ul li .dropdown-content a:hover {
+  color: black !important;
+  background-color: #f0c040 !important;
+}
+
+
+/* Dropdown menü açıldığında */
+.dropdown:hover .dropdown-content {
+  display: block; /* Menü öğelerini görünür yapar */
+}
   
   /* Telefonunuz Mu Bozuldu */
   #telefonunuz {
