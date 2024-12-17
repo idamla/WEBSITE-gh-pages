@@ -190,7 +190,12 @@ header nav ul li .dropdown-content a:hover {
     margin-top: 30px; /* Üst kısmında boşluk */
     margin-bottom: 50px; /* Alt kısmında boşluk */
   }
-  
+  .add-icon {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 70px;
+    cursor: pointer;
+  }
   /* Kampanyalar başlığı stil */
   #kampanyalar h1 {
     text-align: center; /* Başlığı ortalar */
