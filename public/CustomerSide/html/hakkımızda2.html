@@ -15,14 +15,15 @@
     <meta property="og:title" content="Uygun Fiyatlarla Akıllı Cihaz Tamir Hizmeti Sizlerle">
     <meta property="og:description" content=" Hızlı ve güvenilir tamir için hemen ulaşın.">
     <meta property="og:url" content="https://telefon-tamiri-seng209-211.com.tr/">
-    <link rel="stylesheet" href="../css/talepSorgula.css">
+    <link rel="stylesheet" href="../css/hakkımızda2.css">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
 
 <body class="main page-loading animation">
-           <!-- Header -->
+
+    <!-- Header -->
     <header>
         <!-- Logo -->
         <div class="logo">
@@ -39,8 +40,8 @@
                 <li><a href="talepSorgula2.html">Talep Sorgula</a></li>
                 <li><a href="products.html">Aksesuar ve Ek
                         Ürünler</a></li>
-                        <li><a href="hakkımızda.html">Hakkımızda</a></li>
-                        <li><a href="SSS.html">SSS</a></li>
+                <li><a href="hakkımızda/html">Hakkımızda</a></li>
+                <li><a href="SSS.html">SSS</a></li>
             </ul>
         </nav>
 
@@ -50,46 +51,15 @@
         </div>
     </header>
 
+
     <div class="container">
-        <h1>TALEP SORGULA</h1>
-        <div class="table-container">
-            <table id="resultTable" style="display:none;">
-                <tr>
-                    <td><b>Müşteri Adı</b></td>
-                    <td id="customerName"></td>
-                </tr>
-                <tr>
-                    <td><b>Müşteri Telefonu</b></td>
-                    <td id="customerPhone"></td>
-                </tr>
-                <tr>
-                    <td><b>Müşteri Adresi</b></td>
-                    <td id="customerAddress"></td>
-                </tr>
-                <tr>
-                    <td><b>Problem Açıklaması</b></td>
-                    <td id="problemDescription"></td>
-                </tr>
-                <tr>
-                    <td><b>Kayıt Tarihi</b></td>
-                    <td id="createdAt"></td>
-                </tr>
-                <tr>
-                    <td><b>Durum</b></td>
-                    <td id="status"></td>
-                </tr>
-                <tr>
-                    <td><b>Fiyat</b></td>
-                    <td id="price"></td>
-                </tr>
-            </table>
+        <h1>MÜŞTERİ YORUMLARI</h1>
+        <div class="form-container">
+            <input type="text" id="name" placeholder="Adınız Soyadınız">
+            <textarea id="comment" rows="5" placeholder="Yorumunuzu yazınız"></textarea>
+            <button id="submitComment">GÖNDER</button>
         </div>
     </div>
-
-    </div>
-
-
-
 
 
     <!-- Footer -->
@@ -99,18 +69,12 @@
             <div class="footer-column">
                 <h3>Telefon Tamiri</h3>
                 <ul>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-olustur">Tamir Talebi Oluştur</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-sorgula">Tamir Talebi Sorgula</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/aksesuar-ve-ek-ürünler">Aksesuarlar ve Ek
+                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-olustur">Talep Oluştur</a></li>
+                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-sorgula">Talep Sorgula</a></li>
+                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/aksesuar-ve-ek-ürünler">Aksesuar ve Ek
                             Ürünler</a></li>
-                    <li>Hakkımızda</li>
-                    <ul>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/sikca-sorulan-sorular">SSS</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/medya-ve-fotograf">Medya ve
-                                Fotoğraflar</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/yorumlar">Yorumlar</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/iletisim">İletişim</a></li>
-                    </ul>
+                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/hakkımızda">Hakkımızda</a></li>
+                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/sikca-sorulan-sorular">SSS</a></li>
                 </ul>
             </div>
             <!-- Orta Sütun -->
@@ -145,27 +109,6 @@
             <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454733_640.png" alt="Mesajlaşma İkonu">
         </a>
     </div>
-
-    <script>
-        // Sayfa yüklendiğinde localStorage'dan veriyi al
-        const repairRequestData = JSON.parse(localStorage.getItem('repairRequestData'));
-    
-        if (repairRequestData) {
-            // Veriyi tabloya doldur
-            document.getElementById('customerName').textContent = repairRequestData.name;
-            document.getElementById('customerPhone').textContent = repairRequestData.phone;
-            document.getElementById('customerAddress').textContent = repairRequestData.adress;
-            document.getElementById('problemDescription').textContent = repairRequestData.sorunlar.join(', ');
-            document.getElementById('createdAt').textContent = new Date(repairRequestData.createdAt).toLocaleDateString();
-            document.getElementById('status').textContent = repairRequestData.state || 'Bilinmiyor';
-            document.getElementById('price').textContent = repairRequestData.price || 'Belirlenmedi';
-    
-            // Tabloyu göster
-            document.getElementById('resultTable').style.display = 'table';
-        } else {
-            alert('Talep verisi bulunamadı.');
-        }
-    </script>
 
 </body>
 
