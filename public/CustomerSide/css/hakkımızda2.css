@@ -154,6 +154,11 @@ h1 {
     border-radius: 10px;
     padding: 20px;
 }
+#name , #comment{
+    color:#000;
+}
+
+
 .arrow {
     font-size: 2rem;
     cursor: pointer;

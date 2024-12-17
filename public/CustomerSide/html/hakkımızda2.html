@@ -40,7 +40,7 @@
                 <li><a href="talepSorgula2.html">Talep Sorgula</a></li>
                 <li><a href="products.html">Aksesuar ve Ek
                         Ürünler</a></li>
-                <li><a href="hakkımızda/html">Hakkımızda</a></li>
+                <li><a href="hakkımızda.html">Hakkımızda</a></li>
                 <li><a href="SSS.html">SSS</a></li>
             </ul>
         </nav>
@@ -57,7 +57,7 @@
         <div class="form-container">
             <input type="text" id="name" placeholder="Adınız Soyadınız">
             <textarea id="comment" rows="5" placeholder="Yorumunuzu yazınız"></textarea>
-            <button id="submitComment">GÖNDER</button>
+            <button id="submitComment" class="js-submitComment">GÖNDER</button>
         </div>
     </div>
 
@@ -109,6 +109,41 @@
             <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454733_640.png" alt="Mesajlaşma İkonu">
         </a>
     </div>
+
+    <script>
+    const submitButton=document.querySelector(".js-submitComment");
+    submitButton.addEventListener("click", async (event) => {
+    event.preventDefault(); // Formun varsayılan davranışını engelle
+
+    const name = document.getElementById("name").value; // Değeri burada al
+    const comment = document.getElementById("comment").value;
+
+    if (!name || !comment) {
+        alert("Lütfen adınızı ve yorumunuzu girin!");
+        return;
+    }
+
+    try {
+        const response = await fetch('http://localhost:3000/api/comment', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, comment })
+        });
+
+        const responseData = await response.json();
+        if (response.ok) {
+            alert(responseData.message); // Backend'den gelen mesajı göster
+        } else {
+            alert("Yorum gönderilemedi: " + responseData.message);
+        }
+    } catch (error) {
+        alert('Bir hata oluştu: ' + error.message);
+    }
+});
+
+    </script>
 
 </body>
 
