@@ -21,12 +21,12 @@
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
 
-<body class="main page-loading animation">
-           <!-- Header -->
+<body>
+    <!-- Header -->
     <header>
         <!-- Logo -->
         <div class="logo">
-            <a href="../../../index.html">
+            <a href="/index.html">
                 <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
                     width="150">
             </a>
@@ -39,19 +39,27 @@
                 <li><a href="talepSorgula2.html">Talep Sorgula</a></li>
                 <li><a href="products.html">Aksesuar ve Ek
                         Ürünler</a></li>
-                        <li><a href="hakkımızda.html">Hakkımızda</a></li>
-                        <li><a href="SSS.html">SSS</a></li>
+                <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                <li><a href="SSS.html">SSS</a></li>
             </ul>
         </nav>
 
         <!-- Login Button -->
         <div class="auth-buttons">
-            <a href="giris.html" class="giris-btn">Giriş Yap</a>
+            <a href="giris.html" class="giris-btn"><b>Giriş Yap</b></a>
         </div>
     </header>
 
+
+    <!-- Ana İçerik Alanı -->
+    <div class="hakkimizda-container">
+        <h2 class="title">TALEP SORGULA</h2>
+    </div>
+
+
+
     <div class="container">
-        <h1>TALEP SORGULA</h1>
+        <h1><b>TALEP BİLGİLERİ</b></h1>
         <div class="table-container">
             <table id="resultTable" style="display:none;">
                 <tr>
@@ -90,8 +98,6 @@
 
 
 
-
-
     <!-- Footer -->
     <footer>
         <div class="footer-container">
@@ -99,18 +105,13 @@
             <div class="footer-column">
                 <h3>Telefon Tamiri</h3>
                 <ul>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-olustur">Tamir Talebi Oluştur</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-sorgula">Tamir Talebi Sorgula</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/aksesuar-ve-ek-ürünler">Aksesuarlar ve Ek
+                    <li><a href="/public/CustomerSide/html/talepOlustur.html">Talep Oluştur</a></li>
+                    <li><a href="/public/CustomerSide/html/talepSorgula2.html">Talep Sorgula</a></li>
+                    <li><a href="/public/CustomerSide/html/products.html">Aksesuar ve Ek
                             Ürünler</a></li>
-                    <li>Hakkımızda</li>
-                    <ul>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/sikca-sorulan-sorular">SSS</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/medya-ve-fotograf">Medya ve
-                                Fotoğraflar</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/yorumlar">Yorumlar</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/iletisim">İletişim</a></li>
-                    </ul>
+                    <li><a href="/public/CustomerSide/html/hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="/public/CustomerSide/html/SSS.html">SSS</a></li>
+
                 </ul>
             </div>
             <!-- Orta Sütun -->
@@ -146,10 +147,12 @@
         </a>
     </div>
 
+
+
     <script>
         // Sayfa yüklendiğinde localStorage'dan veriyi al
         const repairRequestData = JSON.parse(localStorage.getItem('repairRequestData'));
-    
+
         if (repairRequestData) {
             // Veriyi tabloya doldur
             document.getElementById('customerName').textContent = repairRequestData.name;
@@ -159,7 +162,7 @@
             document.getElementById('createdAt').textContent = new Date(repairRequestData.createdAt).toLocaleDateString();
             document.getElementById('status').textContent = repairRequestData.state || 'Bilinmiyor';
             document.getElementById('price').textContent = repairRequestData.price || 'Belirlenmedi';
-    
+
             // Tabloyu göster
             document.getElementById('resultTable').style.display = 'table';
         } else {

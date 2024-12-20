@@ -1,10 +1,13 @@
+/* Genel Stiller */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000;
+  background-color: #3f353c;
   color: #fff;
+  overflow-x: hidden;
 }
+
 
 /* Header */
 header {
@@ -60,48 +63,10 @@ header nav ul li a {
 }
 
 header nav ul li:hover a {
-  background-color: #444;
+  background-color: transparent;
   /* Hover rengi */
-  color: #f0c040;
-}
-
-header nav ul li .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  /* Menüye hemen altına yerleştir */
-  left: 0;
-  background-color: #333;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  padding: 10px 0;
-  min-width: 200px;
-  /* Genişlik */
-  z-index: 1000;
-}
-
-/* Dropdown linklerinin stilleri */
-header nav ul li .dropdown-content a {
-  color: white;
+  color: rgb(172, 98, 169);
   text-decoration: none;
-  padding: 15px 25px;
-  /* İç boşluğu artırdım */
-  display: block;
-  font-size: 1.8rem;
-  /* Dropdown bağlantı yazı boyutunu büyüttüm */
-  font-weight: normal;
-}
-
-header nav ul li:hover .dropdown-content {
-  display: block;
-  /* Hover sırasında dropdown'ı göster */
-}
-
-header nav ul li .dropdown-content a:hover {
-  background-color: #444;
-  /* Hover sırasında dropdown linki rengini değiştir */
-  color: #f0c040;
-  /* Hover rengini değiştirdim */
 }
 
 
@@ -122,10 +87,40 @@ header .auth-buttons a {
 }
 
 header .auth-buttons a:hover {
-  background-color: #f27A1A;
-  color: white;
-  border-color: white;
+  background-color: rgb(172, 85, 169);
+  color: black;
+  border-color: black;
+  box-shadow: 0 5px 10px rgba(181, 126, 179, 0.5), 0 -5px 10px rgba(181, 126, 179, 0.5), 5px 0 10px rgba(181, 126, 179, 0.5), -5px 0 10px rgba(181, 126, 179, 0.5);
 }
+
+
+
+/* Ana İçerik Alanı */
+.hakkimizda-container {
+  width: 100%;
+  height:150px;
+  margin: 20px auto;
+  background-color: #000;
+  color: #fff;
+  padding: 30px;
+  border-radius: 0;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 160px;
+}
+
+.title {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  margin-top:25px;
+  font-weight: bold;
+  
+}
+
+
+
+
 
 /* Genel Form Elemanları */
 form select,
@@ -134,10 +129,9 @@ form input[type="tel"],
 form textarea {
   width: 100%;
   padding: 15px;
-  /* Rahat bir tıklama alanı */
   margin-top: 10px;
   margin-bottom: 15px;
-  border: 1px solid #666;
+  border: 1px solid #cdbac8;
   /* Daha modern kenarlık */
   border-radius: 8px;
   /* Hafif yuvarlatılmış köşeler */
@@ -157,18 +151,15 @@ form select:focus,
 form input[type="text"]:focus,
 form input[type="tel"]:focus,
 form textarea:focus {
-  border-color: #ffcc00;
-  /* Sarı tonlu bir vurgulama */
+  border-color: rgb(172, 98, 169);
   background-color: #292929;
-  /* Hafif aydınlatılmış arka plan */
   outline: none;
   transform: scale(1.01);
-  /* Hover sırasında hafif büyüme efekti */
 
 }
 
 form label {
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: #fff; /* Renk uyumu için */
   
 }
@@ -181,8 +172,9 @@ form label {
 
 /* Gönder Butonu */
 form input[type="submit"] {
-  background-color: #ffcc00;
-  color: #111;
+  background-color: #cdbac8;
+  color: black;
+  border: 2px solid black;
   font-weight: bold;
   cursor: pointer;
   border: none;
@@ -194,11 +186,13 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color: #ff9900;
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(255, 153, 0, 0.5);
-  /* Hafif parlama efekti */
+  background-color: rgb(172, 85, 169);
+  color: black;
+  border: 1px solid black;
+  box-shadow: 0 5px 10px rgba(181, 126, 179, 0.5), 0 -5px 10px rgba(181, 126, 179, 0.5), 5px 0 10px rgba(181, 126, 179, 0.5), -5px 0 10px rgba(181, 126, 179, 0.5);
+
 }
+
 
 /* Yedek Cihaz Radyo Düğmeleri */
 .radio-group label {
@@ -213,21 +207,18 @@ form input[type="submit"]:hover {
 }
 
 .radio-group label:hover {
-  color: #ffcc00;
+  color: rgb(172, 98, 169);
   /* Hover sırasında sarı vurgu */
 }
 
 .radio-group input[type="radio"] {
-  accent-color: #ffcc00;
-  /* Radyo düğmesinin dikkat çekici rengi */
+  accent-color: rgb(172, 98, 169) ;
   transform: scale(1.2);
-  /* Biraz büyütülmüş boyut */
 }
 
-/* Footer ile Form Arasındaki Boşluk */
 #talepOlustur {
-  margin-bottom: 50px;
-  max-width: 500px;
+  margin-bottom: 70px;
+  max-width: 800px;
   margin: 50px auto;
   padding: 10px;
   background-color: #111;
@@ -242,7 +233,7 @@ form textarea {
 
 #talepOlustur form {
   width: calc(100% - 2cm); /* Form genişliğini yüzde 100'den 2 cm çıkararak yapıyoruz */
-  margin: 100px auto 50px; /* Üstten 20px, alttan 50px boşluk bırakıyoruz */
+  margin: 50px auto 50px; /* Üstten 20px, alttan 50px boşluk bırakıyoruz */
 }
 
 @media screen and (max-width: 768px) {
@@ -258,7 +249,7 @@ footer {
   background-color: #222;
   color: #fff;
   padding: 20px 0;
-  font-size:1.5rem;
+  font-size: 1.5rem;
 }
 
 .footer-container {
@@ -287,7 +278,7 @@ footer {
 /* Footer Bağlantıları */
 .footer-link {
   font-size: 1.2rem;
-  color: #ffdd00;
+  color: rgb(172, 85, 169);
   text-decoration: none;
 }
 
@@ -309,7 +300,7 @@ footer {
 }
 
 .footer-column a {
-  color: #ffdd00;
+  color: rgb(172, 85, 169);
   text-decoration: none;
 }
 
@@ -337,7 +328,7 @@ footer {
 .footer-bottom {
   text-align: center;
   padding: 10px;
-  background-color: #fff;
+  background-color: #cdbac8;
   color: #000;
 }
 

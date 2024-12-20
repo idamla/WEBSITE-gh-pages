@@ -21,12 +21,12 @@
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
 
-<body class="main page-loading animation">
+<body>
     <!-- Header -->
     <header>
         <!-- Logo -->
         <div class="logo">
-            <a href="../../../index.html">
+            <a href="/index.html">
                 <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
                     width="150">
             </a>
@@ -46,15 +46,20 @@
 
         <!-- Login Button -->
         <div class="auth-buttons">
-            <a href="giris.html" class="giris-btn">Giriş Yap</a>
+            <a href="giris.html" class="giris-btn"><b>Giriş Yap</b></a>
         </div>
     </header>
+
+
+    <!-- Ana İçerik Alanı -->
+    <div class="hakkimizda-container">
+        <h2 class="title">TALEP OLUŞTUR</h2>
+    </div>
 
     <!-- Talep Oluştur -->
     <section id="talepOlustur">
         <form id="requestForm">
-            <!--action bağlantısını talepOlustur2 ekranına yönlendir.-->
-            <h1>Talep Oluştur</h1>
+
             <label for="model">Telefon Modeliniz:</label>
             <input id="model" type="text" name="model" placeholder="Örn: iPhone 16" required>
 
@@ -70,16 +75,16 @@
             <!-- Sorun Seçimi Açılır Menü -->
             <label for="sorunlar">Karşılaşılan Sorun:</label>
             <select id="sorunlar" name="sorunlar" multiple>
-                <option value="Ekran">Ekran Sorunları</option>
-                <option value="Batarya">Batarya Sorunları</option>
-                <option value="Ses">Ses Sorunları</option>
-                <option value="Kamera">Kamera Sorunları</option>
-                <option value="Tus">Tuş Sorunları</option>
-                <option value="Ag">Ağ/Bağlantı Sorunlar</option>
-                <option value="Kozmetik">Kozmetik Sorunları</option>
-                <option value="Titreşim">Titreşim Sorunları</option>
-                <option value="Sıvı">Sıvı Teması</option>
-                <option value="Cam">Cam Değişimi</option>
+                <option value="Ekran Sorunları">Ekran Sorunları</option>
+                <option value="Batarya Sorunları">Batarya Sorunları</option>
+                <option value="Ses Sorunları">Ses Sorunları</option>
+                <option value="Kamera Sorunları">Kamera Sorunları</option>
+                <option value="Tuş Sorunları">Tuş Sorunları</option>
+                <option value="Ag Bağlantı Sorunları">Ağ/Bağlantı Sorunları</option>
+                <option value="Kozmetik Sorunları">Kozmetik Sorunları</option>
+                <option value="Titreşim Sorunları">Titreşim Sorunları</option>
+                <option value="Sıvı Teması">Sıvı Teması</option>
+                <option value="Cam Değişimi">Cam Değişimi</option>
                 <option value="Diğer">Diğer</option>
             </select>
 
@@ -104,8 +109,9 @@
             <input type="submit" value="Talep Gönder">
         </form>
         </div>
-        
+
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -114,18 +120,13 @@
             <div class="footer-column">
                 <h3>Telefon Tamiri</h3>
                 <ul>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-olustur">Tamir Talebi Oluştur</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-sorgula">Tamir Talebi Sorgula</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/aksesuar-ve-ek-ürünler">Aksesuarlar ve Ek
+                    <li><a href="/public/CustomerSide/html/talepOlustur.html">Talep Oluştur</a></li>
+                    <li><a href="/public/CustomerSide/html/talepSorgula2.html">Talep Sorgula</a></li>
+                    <li><a href="/public/CustomerSide/html/products.html">Aksesuar ve Ek
                             Ürünler</a></li>
-                    <li>Hakkımızda</li>
-                    <ul>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/sikca-sorulan-sorular">SSS</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/medya-ve-fotograf">Medya ve
-                                Fotoğraflar</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/yorumlar">Yorumlar</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/iletisim">İletişim</a></li>
-                    </ul>
+                    <li><a href="/public/CustomerSide/html/hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="/public/CustomerSide/html/SSS.html">SSS</a></li>
+
                 </ul>
             </div>
             <!-- Orta Sütun -->
@@ -161,15 +162,16 @@
         </a>
     </div>
 
+
     <script>
         const form = document.getElementById('requestForm');
-    
+
         form.addEventListener('submit', async (event) => {
             event.preventDefault(); // Formun varsayılan davranışını engelle
-    
+
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries()); // Form verilerini bir nesneye çevir
-    
+
             try {
                 const response = await fetch('http://localhost:3000/api/repairRequests', {
                     method: 'POST',
@@ -178,14 +180,14 @@
                     },
                     body: JSON.stringify(data)
                 });
-    
+
                 if (response.ok) {
                     // Sunucuya başarılı şekilde gönderildi
                     const responseData = await response.json(); // Sunucudan gelen yanıtı al
 
-                    const queryNum = responseData.queryNum; 
-                    
-                    localStorage.setItem("queryNum",queryNum);
+                    const queryNum = responseData.queryNum;
+
+                    localStorage.setItem("queryNum", queryNum);
                     window.location.href = 'talepOlustur2.html'; // Yönlendirme
                     alert('Talebiniz başarıyla oluşturuldu!');
                 } else {
@@ -196,7 +198,7 @@
             }
         });
     </script>
-    
+
 
 </body>
 

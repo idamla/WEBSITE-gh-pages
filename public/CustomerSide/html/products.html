@@ -21,36 +21,64 @@
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
 
-<body class="main page-loading animation">
-<!-- Header -->
-<header>
-    <!-- Logo -->
-    <div class="logo">
-        <a href="../../../index.html">
-            <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
-                width="150">
-        </a>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="/index.html">
+                <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
+                    width="150">
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="talepOlustur.html">Talep Oluştur</a></li>
+                <li><a href="talepSorgula2.html">Talep Sorgula</a></li>
+                <li><a href="products.html">Aksesuar ve Ek
+                        Ürünler</a></li>
+                <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                <li><a href="SSS.html">SSS</a></li>
+            </ul>
+        </nav>
+
+        <!-- Login Button -->
+        <div class="auth-buttons">
+            <a href="giris.html" class="giris-btn"><b>Giriş Yap</b></a>
+        </div>
+    </header>
+
+
+    <!-- Ana İçerik Alanı -->
+    <div class="hakkimizda-container">
+        <h2 class="title">AKSESUAR VE EK ÜRÜNLER</h2>
     </div>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="talepOlustur.html">Talep Oluştur</a></li>
-            <li><a href="talepSorgula2.html">Talep Sorgula</a></li>
-            <li><a href="products.html">Aksesuar ve Ek
-                    Ürünler</a></li>
-            <li><a href="hakkımızda.html">Hakkımızda</a></li>
-            <li><a href="SSS.html">SSS</a></li>
-        </ul>
-    </nav>
 
-    <!-- Login Button -->
-    <div class="auth-buttons">
-        <a href="giris.html" class="giris-btn">Giriş Yap</a>
+    <div class="filters">
+        <div class="categories">
+            <label for="category-select">Kategoriler:</label>
+            <select id="category-select">
+                <option value="all">Tüm Ürünler</option>
+                <option value="cases">Telefon Kılıfları</option>
+                <option value="chargers">Şarj Cihazları</option>
+                <option value="headphones">Kulaklıklar</option>
+                <option value="car-accessories">Araç Aksesuarları</option>
+                <option value="others">Diğer Ürünler</option>
+            </select>
+        </div>
+        <div class="sorting">
+            <label for="sort-select">Sırala:</label>
+            <select id="sort-select">
+                <option value="desc">En Pahalıdan En Ucuza</option>
+                <option value="asc">En Ucuzdan En Pahalıya</option>
+            </select>
+        </div>
     </div>
-</header>
 
-    <h1 class="main-title">Mağazadaki Ürünler</h1>
+
     <div class="products">
         <div class="product-card">
             <img src="https://media.istockphoto.com/id/1310474222/tr/foto%C4%9Fraf/cep-telefonu-i%C3%A7in-%C3%A7ok-renkli-plastik-arka-kapak-y%C4%B1%C4%9F%C4%B1n%C4%B1-n%C3%B6tr-arka-plan-%C3%BCzerinde-ak%C4%B1ll%C4%B1.jpg?s=612x612&w=0&k=20&c=cCarRa_ZH1HA6-OnDAbySj_EwrurZm7z_8fL6zCjKPk="
@@ -106,12 +134,13 @@
             <div class="footer-column">
                 <h3>Telefon Tamiri</h3>
                 <ul>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-olustur">Talep Oluştur</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-sorgula">Talep Sorgula</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/aksesuar-ve-ek-ürünler">Aksesuar ve Ek
+                    <li><a href="/public/CustomerSide/html/talepOlustur.html">Talep Oluştur</a></li>
+                    <li><a href="/public/CustomerSide/html/talepSorgula2.html">Talep Sorgula</a></li>
+                    <li><a href="/public/CustomerSide/html/products.html">Aksesuar ve Ek
                             Ürünler</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/hakkımızda">Hakkımızda</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/sikca-sorulan-sorular">SSS</a></li>
+                    <li><a href="/public/CustomerSide/html/hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="/public/CustomerSide/html/SSS.html">SSS</a></li>
+
                 </ul>
             </div>
             <!-- Orta Sütun -->
@@ -146,6 +175,8 @@
             <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454733_640.png" alt="Mesajlaşma İkonu">
         </a>
     </div>
+
+
 
 </body>
 

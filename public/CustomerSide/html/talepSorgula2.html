@@ -21,39 +21,45 @@
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
 
-<body class="main page-loading animation">
-        <!-- Header -->
-        <header>
-            <!-- Logo -->
-            <div class="logo">
-                <a href="../../../index.html">
-                    <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
-                        width="150">
-                </a>
-            </div>
-    
-            <!-- Navigation -->
-            <nav>
-                <ul>
-                    <li><a href="talepOlustur.html">Talep Oluştur</a></li>
-                    <li><a href="talepSorgula2.html">Talep Sorgula</a></li>
-                    <li><a href="products.html">Aksesuar ve Ek
-                            Ürünler</a></li>
-                            <li><a href="hakkımızda.html">Hakkımızda</a></li>
-                            <li><a href="SSS.html">SSS</a></li>
-                </ul>
-            </nav>
-    
-            <!-- Login Button -->
-            <div class="auth-buttons">
-                <a href="giris.html" class="giris-btn">Giriş Yap</a>
-            </div>
-        </header>
-    <!--ŞİMDİ ŞÖYLE BİR SORUN VAR SORGULAMA NO YAZACAĞIM YERE TIKLAMAMA İZİN VERMİYO NORMALDE BUNU HTML VE CSS KODLARI İLE YAPABİLMEM LAZIM AMA OLMADI JS KODLARIYLA OLUR MU BİLEMİYORUM SORUNU ÇÖZEMEDİM DAHA -->
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="/index.html">
+                <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
+                    width="150">
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="talepOlustur.html">Talep Oluştur</a></li>
+                <li><a href="talepSorgula2.html">Talep Sorgula</a></li>
+                <li><a href="products.html">Aksesuar ve Ek
+                        Ürünler</a></li>
+                <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                <li><a href="SSS.html">SSS</a></li>
+            </ul>
+        </nav>
+
+        <!-- Login Button -->
+        <div class="auth-buttons">
+            <a href="giris.html" class="giris-btn"><b>Giriş Yap</b></a>
+        </div>
+    </header>
+
+
+    <!-- Ana İçerik Alanı -->
+    <div class="hakkimizda-container">
+        <h2 class="title">TALEP SORGULA</h2>
+    </div>
+
 
     <div class="header">
         <div class="container">
-            <h1>TALEP SORGULA</h1>
+            <h1><b>TALEP SORGULA</b></h1>
             <div class="search-box">
                 <input id="queryNumInput" type="text" placeholder="Talep numaranızı giriniz!">
                 <button id="searchButton">SORGULA</button>
@@ -69,18 +75,13 @@
             <div class="footer-column">
                 <h3>Telefon Tamiri</h3>
                 <ul>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-olustur">Tamir Talebi Oluştur</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-sorgula">Tamir Talebi Sorgula</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/aksesuar-ve-ek-ürünler">Aksesuarlar ve Ek
+                    <li><a href="/public/CustomerSide/html/talepOlustur.html">Talep Oluştur</a></li>
+                    <li><a href="/public/CustomerSide/html/talepSorgula2.html">Talep Sorgula</a></li>
+                    <li><a href="/public/CustomerSide/html/products.html">Aksesuar ve Ek
                             Ürünler</a></li>
-                    <li>Hakkımızda</li>
-                    <ul>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/sikca-sorulan-sorular">SSS</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/medya-ve-fotograf">Medya ve
-                                Fotoğraflar</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/yorumlar">Yorumlar</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/iletisim">İletişim</a></li>
-                    </ul>
+                    <li><a href="/public/CustomerSide/html/hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="/public/CustomerSide/html/SSS.html">SSS</a></li>
+
                 </ul>
             </div>
             <!-- Orta Sütun -->
@@ -116,15 +117,17 @@
         </a>
     </div>
 
+
+
     <script>
         document.getElementById('searchButton').addEventListener('click', async () => {
             const queryNum = document.getElementById('queryNumInput').value;
-    
+
             if (!queryNum) {
                 alert("Lütfen bir talep numarası girin.");
                 return;
             }
-    
+
             try {
                 const response = await fetch('http://localhost:3000/api/repairRequests/search', {
                     method: 'POST',
@@ -133,13 +136,13 @@
                     },
                     body: JSON.stringify({ queryNum })
                 });
-    
+
                 const data = await response.json();
-    
+
                 if (data.success) {
                     // Talep verilerini localStorage'a kaydet
                     localStorage.setItem('repairRequestData', JSON.stringify(data.data));
-    
+
                     // Başka sayfaya yönlendir
                     window.location.href = 'talepSorgula.html'; // Talep sonucu sayfasına yönlendir
                 } else {

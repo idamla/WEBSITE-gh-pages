@@ -1,9 +1,11 @@
+/* Genel Stiller */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background-color: #3f353c;
     color: #fff;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -19,61 +21,70 @@ header {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Logo */
-  header .logo img {
+}
+
+/* Header Container */
+.header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+header .logo img {
     max-width: 120px;
-  }
-  
-  /* Header ve Menü */
-  header nav ul {
+}
+
+/* Header ve Menü */
+header nav ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 30px; /* Menü arasındaki boşluğu artırdım */
-    align-items: center; /* Menü öğelerinin dikeyde hizalanması */
-  }
-  
-  header nav ul li {
+    gap: 30px;
+    align-items: center;
+
+}
+
+header nav ul li {
     position: relative;
-  }
-  
-  /* Menü bağlantıları */
-  header nav ul li a {
+}
+
+/* Menü bağlantıları */
+header nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 2rem;
     font-weight: bold;
     padding: 25px 30px;
-  }
-  
-  header nav ul li:hover a {
+}
+
+header nav ul li:hover a {
     background-color: transparent;
-    color: #f0c040;
+    color: rgb(172, 98, 169);
     text-decoration: none;
-  }
-  
-  /* Dropdown Menü */
-  .dropdown {
+}
+
+/* Dropdown Menü */
+.dropdown {
     position: relative;
-    display: inline-block; /* Dropdown'ı diğer öğelerle aynı satıra yerleştirir */
-  }
-  
-  .dropdown-button {
+    display: inline-block;
+}
+
+.dropdown-button {
     background-color: transparent;
     color: white;
-    padding: 25px 30px; /* Menü ile aynı padding'i kullanıyoruz */
-    font-size: 2rem; /* Menü ile aynı yazı boyutunu kullandım */
+    padding: 25px 30px;
+    /* Menü ile aynı padding'i kullanıyoruz */
+    font-size: 2rem;
+    /* Menü ile aynı yazı boyutunu kullandım */
     border: none;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
-  }
-  
-  /* Dropdown Menü İçeriği */
-  .dropdown-content {
+}
+
+/* Dropdown Menü İçeriği */
+.dropdown-content {
     display: none;
     position: absolute;
     top: 100%;
@@ -83,87 +94,87 @@ header {
     border-radius: 5px;
     min-width: 200px;
     z-index: 1000;
-  }
-  
-  /* Dropdown Menü Öğeleri */
-  .dropdown-content a {
+}
+
+/* Dropdown Menü Öğeleri */
+.dropdown-content a {
     color: white;
-    padding: 15px 30px; /* Menü öğelerindeki padding ile uyumlu */
+    padding: 15px 30px;
+    /* Menü öğelerindeki padding ile uyumlu */
     text-decoration: none;
     display: block;
-    font-size: 2rem; /* Menü ile uyumlu yazı boyutu */
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  header nav ul li .dropdown-content a {
-    color: white !important; /* !important ile bu kuralın geçerli olmasını sağlıyoruz */
-  }
-  
-  header nav ul li .dropdown-content a:hover {
-    color: black !important;
-    background-color: #f0c040 !important;
-  }
-  
-  
-  /* Dropdown menü açıldığında */
-  .dropdown:hover .dropdown-content {
-    display: block; /* Menü öğelerini görünür yapar */
-  }
-  
-
-
-/* Giriş Butonu */
-header .auth-buttons a {
     font-size: 2rem;
-    /* Menü bağlantı yazı boyutunu büyüttüm */
-    /* Yazı boyutunu büyüttüm */
-    margin: 0 10px;
-    padding: 10px 25px;
-    /* Daha geniş buton */
-    text-decoration: none;
-    border-radius: 25px;
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-    transition: 0.3s;
+    /* Menü ile uyumlu yazı boyutu */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-header .auth-buttons a:hover {
-    background-color: #f6c90e;
-    color: black;
-    border-color: black;
+header nav ul li .dropdown-content a {
+    color: white !important;
+    /* !important ile bu kuralın geçerli olmasını sağlıyoruz */
 }
+
+header nav ul li .dropdown-content a:hover {
+    color: black !important;
+    background-color: rgb(172, 98, 169) !important;
+}
+
+
+/* Dropdown menü açıldığında */
+.dropdown:hover .dropdown-content {
+    display: block;
+    /* Menü öğelerini görünür yapar */
+}
+
 
 
 /* Ana İçerik Alanı */
 .hakkimizda-container {
-    width: 80%;
+    width: 100%;
+    height: 150px;
     margin: 20px auto;
     background-color: #000;
     color: #fff;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 0;
+    align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top:200px;
+    margin-top: 160px;
 }
 
 .title {
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 20px;
+    margin-top: 25px;
     font-weight: bold;
+
 }
 
-/* Form Alanı */
+
+
+
 .form-container {
-    background-color: #fff;
-    color: #000;
+    margin: 50px auto;
+    max-width: 800px;
     padding: 20px;
+    background-color: #111;
+    border-radius: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+#kampanyaEkle {
+    margin-bottom: 70px;
+    max-width: 800px;
+    margin: 50px auto;
+    margin-bottom: 50px;
+    background-color: #111;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 label {
@@ -173,36 +184,62 @@ label {
     font-size: 1.5rem;
 }
 
-textarea {
+textarea,
+input[type="file"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-    font-size: 1.3rem;
+    padding: 12px;
+    font-size: 1.5rem;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #f5f5f5;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input[type="file"] {
-    display: block;
-    margin-top: 5px;
+textarea:focus,
+textarea:hover,
+input[type="file"]:focus,
+input[type="file"]:hover {
+    border-color: #ac55a9;
+    box-shadow: 0 0 10px rgba(172, 85, 169, 0.5);
+    outline: none;
 }
 
 .ekle-btn {
-    background-color: #ffcc00;
-    border: none;
-    color: #000;
-    padding: 10px 20px;
-    font-size: 1rem;
+    background-color: #cdbac8;
+    color: black;
+    border: 2px solid black;
     font-weight: bold;
-    border-radius: 5px;
     cursor: pointer;
-    display: inline-block;
-    margin-top:15px;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 0;
+    width: 90%;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    margin: 40px auto 40px;
+    /* Üst, orta ve alt boşluklar */
+    display: block;
+    /* Ortalamak için block yap */
+    text-align: center;
+    /* İçeriği ortala */
 }
 
 .ekle-btn:hover {
-    background-color: #e0a800;
+    background-color: rgb(172, 85, 169);
+    color: black;
+    border: 1px solid black;
+    box-shadow: 0 5px 10px rgba(181, 126, 179, 0.5), 0 -5px 10px rgba(181, 126, 179, 0.5), 5px 0 10px rgba(181, 126, 179, 0.5), -5px 0 10px rgba(181, 126, 179, 0.5);
+
 }
+
+.ekle-btn:active {
+    transform: scale(0.98);
+}
+
+
+
+
 
 
 /* Footer */
@@ -239,7 +276,7 @@ footer {
 /* Footer Bağlantıları */
 .footer-link {
     font-size: 1.2rem;
-    color: #ffdd00;
+    color: rgb(172, 85, 169);
     text-decoration: none;
 }
 
@@ -261,7 +298,7 @@ footer {
 }
 
 .footer-column a {
-    color: #ffdd00;
+    color: rgb(172, 85, 169);
     text-decoration: none;
 }
 
@@ -289,7 +326,7 @@ footer {
 .footer-bottom {
     text-align: center;
     padding: 10px;
-    background-color: #fff;
+    background-color: #cdbac8;
     color: #000;
 }
 

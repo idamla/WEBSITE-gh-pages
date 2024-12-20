@@ -18,47 +18,47 @@
     <link rel="stylesheet" href="../css/updateProduct.css">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
 
-<body class="main page-loading animation">
-   <!-- Header -->
-   <header>
-    <!-- Logo -->
-    <div class="logo">
-        <a href="dashboard.html">
-            <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
-                width="150">
-        </a>
+<body>
+    <header>
+        <div class="logo">
+            <a href="dashboard.html">
+                <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
+                    width="150">
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="myRequests.html">Taleplerim</a></li>
+                <li><a href="products.html">Aksesuar ve Ek Ürünler</a></li>
+                <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                <li><a href="SSS.html">SSS</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-button">Admin Kullanıcısı</button>
+                    <div class="dropdown-content">
+                        <a href="#">Ödemeler</a>
+                        <a href="#">Çalışanlar</a>
+                        <a href="changePassword.html">Şifre değiştir</a>
+                        <a href="../../../index.html">Çıkış Yap</a>
+                    </div>
+                </li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <div class="hakkimizda-container">
+        <h2 class="title">AKSESUAR VE EK ÜRÜN EKLE</h2>
     </div>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="myRequests.html">Taleplerim</a></li>
-            <li><a href="products.html">Aksesuar ve Ek Ürünler</a></li>
-            <li><a href="hakkımızda.html">Hakkımızda</a></li>
-            <li><a href="SSS.html">SSS</a></li>
-            <li class="dropdown">
-                <button class="dropdown-button">Admin Kullanıcısı</button>
-                <div class="dropdown-content">
-                    <a href="#">Ödemeler</a>
-                    <a href="#">Çalışanlar</a>
-                    <a href="changePassword.html">Şifre değiştir</a>
-                    <a href="../../../index.html">Çıkış Yap</a>
-                </div>
-            </li>
-        </ul>
-    
-    </nav>
-
-</header>
-
-    <!-- Ana İçerik Alanı -->
-    <main class="hakkimizda-container">
-        <h2 class="title">AKSESUAR VE EK ÜRÜNLER</h2>
+    <section id="addProducts">
         <div class="form-container">
-            <!--Ürün Adı-->
             <div class="form-group">
                 <label for="urun-adi">Ürün Adı:</label>
                 <textarea id="aciklama" rows="5" placeholder="Açıklama giriniz..."></textarea>
@@ -83,7 +83,9 @@
             <!-- Ekle Butonu -->
             <button class="ekle-btn">EKLE</button>
         </div>
-    </main>
+    </section>
+
+
 
     <!-- Footer -->
     <footer>
@@ -92,12 +94,13 @@
             <div class="footer-column">
                 <h3>Telefon Tamiri</h3>
                 <ul>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-olustur">Talep Oluştur</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-sorgula">Talep Sorgula</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/aksesuar-ve-ek-ürünler">Aksesuar ve Ek
+                    <li><a href="/public/CustomerSide/html/talepOlustur.html">Talep Oluştur</a></li>
+                    <li><a href="/public/CustomerSide/html/talepSorgula2.html">Talep Sorgula</a></li>
+                    <li><a href="/public/CustomerSide/html/products.html">Aksesuar ve Ek
                             Ürünler</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/hakkımızda">Hakkımızda</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/sikca-sorulan-sorular">SSS</a></li>
+                    <li><a href="/public/CustomerSide/html/hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="/public/CustomerSide/html/SSS.html">SSS</a></li>
+
                 </ul>
             </div>
             <!-- Orta Sütun -->

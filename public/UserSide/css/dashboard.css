@@ -1,13 +1,14 @@
 /* Genel Stiller */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-    color: #fff;
-  }
-  
- /* Header */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #3f353c;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -22,6 +23,12 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
 
+/* Header Container */
+.header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 /* Logo */
 header .logo img {
   max-width: 120px;
@@ -33,8 +40,9 @@ header nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 30px; /* Menü arasındaki boşluğu artırdım */
-  align-items: center; /* Menü öğelerinin dikeyde hizalanması */
+  gap: 30px;
+  align-items: center;
+  
 }
 
 header nav ul li {
@@ -52,21 +60,23 @@ header nav ul li a {
 
 header nav ul li:hover a {
   background-color: transparent;
-  color: #f0c040;
+  color: rgb(172, 98, 169);
   text-decoration: none;
 }
 
 /* Dropdown Menü */
 .dropdown {
   position: relative;
-  display: inline-block; /* Dropdown'ı diğer öğelerle aynı satıra yerleştirir */
+  display: inline-block;
 }
 
 .dropdown-button {
   background-color: transparent;
   color: white;
-  padding: 25px 30px; /* Menü ile aynı padding'i kullanıyoruz */
-  font-size: 2rem; /* Menü ile aynı yazı boyutunu kullandım */
+  padding: 25px 30px;
+  /* Menü ile aynı padding'i kullanıyoruz */
+  font-size: 2rem;
+  /* Menü ile aynı yazı boyutunu kullandım */
   border: none;
   cursor: pointer;
   font-weight: bold;
@@ -89,536 +99,640 @@ header nav ul li:hover a {
 /* Dropdown Menü Öğeleri */
 .dropdown-content a {
   color: white;
-  padding: 15px 30px; /* Menü öğelerindeki padding ile uyumlu */
+  padding: 15px 30px;
+  /* Menü öğelerindeki padding ile uyumlu */
   text-decoration: none;
   display: block;
-  font-size: 2rem; /* Menü ile uyumlu yazı boyutu */
+  font-size: 2rem;
+  /* Menü ile uyumlu yazı boyutu */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 header nav ul li .dropdown-content a {
-  color: white !important; /* !important ile bu kuralın geçerli olmasını sağlıyoruz */
+  color: white !important;
+  /* !important ile bu kuralın geçerli olmasını sağlıyoruz */
 }
 
 header nav ul li .dropdown-content a:hover {
   color: black !important;
-  background-color: #f0c040 !important;
+  background-color: rgb(172, 98, 169) !important;
 }
 
 
 /* Dropdown menü açıldığında */
 .dropdown:hover .dropdown-content {
-  display: block; /* Menü öğelerini görünür yapar */
+  display: block;
+  /* Menü öğelerini görünür yapar */
 }
-  
-  /* Telefonunuz Mu Bozuldu */
-  #telefonunuz {
-    margin-top: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    background-color: #000;
-    /* Arka plan siyah */
-    color: #fff;
-    /* Metin beyaz */
-    padding: 0 50px;
-    /* Kenar boşlukları */
-    box-sizing: border-box;
-    margin-bottom: 50px;
-    ;
-  }
-  
-  #telefonunuz .content {
-    max-width: 50%;
-    /* Sol kısmı genişliği ayarla */
-  }
-  
-  #telefonunuz h1 {
-    font-size: 5rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #fff;
-    /* Beyaz yazı */
-  }
-  
-  #telefonunuz h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #ccc;
-    /* Açık gri yazı */
-  }
-  
-  #talepButtonLink {
-    text-decoration: none; /* Altını kaldır */
-    color: inherit; /* Varsayılan renk (butonun rengi) */
-  }
-  
-  
-  
-  #talep-olustur {
-    font-size: 3rem;
-    padding: 15px 30px;
-    border: 2px solid white;
-    background-color: transparent;
-    color: white;
-    border-radius: 60px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 30px;
-  }
-  
-  #talep-olustur:hover {
-    background-color: white;
-    color: black;
-  }
-  
-  /* Sağdaki telefon görseli */
-  #telefonunuz .image-container {
-    max-width: 40%;
-    text-align: right;
-  }
-  
-  #telefonunuz .image-container img {
-    max-width: 100%;
-    /* Görselin tam genişliğini ayarla */
-    height: auto;
-  }
-  
-  #kampanyalar {
-    background-color: white;
-    padding: 50px 50px;
-    margin-top: 30px; /* Üst kısmında boşluk */
-    margin-bottom: 50px; /* Alt kısmında boşluk */
-  }
-  .add-icon {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 70px;
-    cursor: pointer;
-  }
-  /* Kampanyalar başlığı stil */
-  #kampanyalar h1 {
-    text-align: center; /* Başlığı ortalar */
-    font-size: 36px;
-    margin-bottom: 30px; /* Slider ile aradaki boşluk */
-    margin-top: 20px; /* Üstteki alan ile boşluk */
-    color: black; /* Başlık rengini belirler */
-  }
-  
-  .carousel-inner {
-    background-color: white !important;
-    /* Slider içindeki arka planı siyah yap */
-  }
-  
-  
-  .carousel-caption {
-    color: white;
-    /* Yazı rengini beyaz yap */
-  }
-  
-  .carousel-indicators li {
-    background-color: white;
-    /* Göstergelerin rengini beyaz yap */
-  }
-  
-  .carousel-control {
-    color: white;
-    /* Sağ ve sol okların rengini beyaz yap */
-  }
-  
-  .carousel-control.left,
-  .carousel-control.right {
-    background-color: rgba(0, 0, 0, 0.1);
-    /* Okların arkasındaki siyah zemin */
-  }
-  
-  /* Ana İçerik */
-  .steps-container {
-    padding: 80px 50px;
-    /* Daha fazla iç boşluk ekleyerek alanı büyütüyoruz */
-    text-align: center;
-    position: relative;
-    background-color: #e9ecef;
-    /* Gerekirse arka plan rengi eklenebilir */
-    margin-bottom: 30px;
-  }
-  
-  .steps-container h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: black;
-  }
-  
-  .steps-container p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #222;
-  }
-  
-  .arrow {
-    background: url('https://cepkurye.com/img/homepage/home-3/line.png') no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 800px;
-    position: relative;
-    margin: 0 auto;
-    display: block;
-    /* İçerikleri hizalamak için gerekli */
-  }
-  
-  .step {
-    position: absolute;
-    text-align: center;
-  }
-  
-  .step img {
-    width: 80px;
-    margin-bottom: 10px;
-  }
-  
-  .step-number {
-    font-size: 1.5rem;
-    background-color: #F5B7B1;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-    margin: 0 auto 10px auto;
-    color: #4a4a68;
-  }
-  
-  .step-description {
-    font-size: 1rem;
-    color: #4a4a68;
-    max-width: 200px;
-    margin: 0 auto;
-  }
-  
-  .step:nth-child(1) {
-    top: 50px;
-    left: 18%;
-  }
-  
-  .step:nth-child(2) {
-    top: 300px;
-    right: 15%;
-  }
-  
-  .step:nth-child(3) {
-    bottom: 50px;
-    left: 30%;
-  }
-  
-  
-  #neden {
-    text-align: center;
-    padding: 80px 20px;
-    /* Üst ve alt kısımda daha fazla boşluk */
-    background-color: #000;
-    /* Arka plan siyah */
-    color: #fff;
-    /* Metin beyaz */
-    margin-top: 40px;
-    /* Üst kısmıyla biraz boşluk bırak */
-  }
-  
-  .neden-baslik {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: white;
-  }
-  
-  .neden-aciklama {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #ccc;
-  }
-  
-  .neden-kartlar {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .kart {
-    background: #fff;
-    border-radius: 12px;
-    padding: 30px 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .kart:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-  }
-  
-  .kart h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .kart p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  /* Renkli Kartlar */
-  .kart:nth-child(1) {
-    background-color: #F9E79F;
-    color: #fff;
-  }
-  
-  .kart:nth-child(2) {
-    background-color: #F8C471;
-    color: #fff;
-  }
-  
-  .kart:nth-child(3) {
-    background-color: #F5B7B1;
-    color: #fff;
-  }
-  
-  .kart:nth-child(4) {
-    background-color: #FADBD8;
-    color: #fff;
-  }
-  
-  /* Tamir Hizmetleri Bölümü */
-  .tamir-hizmetleri {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: black;
-  }
-  
-  .tamir-hizmetleri h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 20px;
-  }
-  
-  .carousel {
-    overflow: hidden;
-    width: 80%;
-    margin: 0 auto;
-    position: relative;
-  }
-  
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .service-item {
-    flex: 0 0 20%;
-    /* Ekranın yüzde 20'sini kaplasın */
-    text-align: center;
-    margin: 10px;
-    padding: 20px;
-    background-color: #e9ecef;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .service-item:hover {
-    background-color: black;
-    color: white;
-  }
-  
-  /* Hizmet Verdiğimiz Markalar */
-  .hizmet-marka {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: black;
-    padding-top: 50px;
-    margin-bottom: 50px;
-  }
-  
-  .hizmet-marka h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 30px;
-  }
-  
-  .hizmet-marka p {
-    font-size: 16px;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 30px;
-  }
-  
-  /* Markalar Bölümü Düzenlemesi */
-  .markalar {
-    display: flex;
-    /* Flexbox kullanımı */
-    justify-content: center;
-    /* Ortala */
-    flex-wrap: wrap;
-    /* Taşan logoları bir alt satıra taşı */
-    gap: 30px;
-    /* Aralarına boşluk ekle */
-  }
-  
-  .marka {
-    display: flex;
-    /* Her logoyu kapsayıcı içine hizalamak için */
-    align-items: center;
-    /* Dikey merkezleme */
-    justify-content: center;
-    /* Yatay merkezleme */
-    width: 120px;
-    /* Sabit genişlik */
-    height: 120px;
-    /* Sabit yükseklik */
-    background-color: #f9f9f9;
-    /* Hafif gri zemin */
-    border-radius: 8px;
-    /* Köşeleri yuvarlat */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Hafif gölge */
-  }
-  
-  .marka img {
-    max-width: 80%;
-    /* Logoların genişliği */
-    max-height: 80%;
-    /* Logoların yüksekliği */
-    object-fit: contain;
-    /* Görsellerin orantısını koru */
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #222;
-    color: #fff;
-    padding: 20px 0;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-  
-  .footer-column {
-    width: 30%;
-    text-align: center;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #222;
-    color: #fff;
-    padding: 20px 0;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-  
-  .footer-column {
-    width: 30%;
-    text-align: center;
-  }
-  
-  /* Logo */
-  .footer-logo {
-    max-width: 150px !important; /* Logo boyutunu belirgin şekilde büyüt */
-    height: auto !important; /* Oranını koruyarak yükseklik ayarla */
-    display: block;
-    margin: 0 auto 10px; /* Ortala ve altına boşluk ekle */
-  }
-  
-  /* Footer Bağlantıları */
-  .footer-link {
-    font-size: 1.2rem;
-    color: #ffdd00;
-    text-decoration: none;
-  }
-  
-  .footer-link:hover {
-    text-decoration: underline;
-  }
-  
-  .footer-column ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-column ul li {
-    margin: 5px 0;
-  }
-  
-  .footer-column ul ul li {
-    margin-left: 15px;
-  }
-  
-  .footer-column a {
-    color: #ffdd00;
-    text-decoration: none;
-  }
-  
-  .footer-column a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Sosyal Medya İkonları */
-  .footer-column img {
-    width: 24px; /* İkon boyutunu küçült */
-    height: 24px;
-    margin: 0 5px; /* Aralarına boşluk ekle */
-    filter: invert(1); /* Beyaz renge dönüştür */
-  }
-  
-  .footer-column img:hover {
-    opacity: 0.8; /* Hover durumunda biraz şeffaflık ekleyin */
-  }
-  
-  /* Footer Alt Kısım */
-  .footer-bottom {
-    text-align: center;
-    padding: 10px;
-    background-color: #fff;
-    color: #000;
-  }
-  
-  /* Mesajlaşma Ikonu */
-  .message-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-  
-  .message-icon img {
-    width: 70px;
-    height: 70px;
-    cursor: pointer;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Hafif bir gölge efekti */
-    transition: 0.3s;
-  }
-  
-  .message-icon img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
-  }
-  
+
+
+
+
+/* Telefonunuz Mu Bozuldu */
+#telefonunuz {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #121111;
+  color: #fff;
+  padding: 0 50px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+/* Kayan Yazı Konteyneri */
+.scroll-container {
+  overflow: hidden;
+  width: 100%;
+  padding-right: 20px;
+}
+
+.scroll-text {
+  display: inline-block;
+  opacity: 0;
+  /* Başlangıçta görünmez */
+  animation: scroll-right 2s ease-in-out forwards;
+}
+
+/* Animasyon Tanımı */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+    /* Soldan başlar */
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(20px);
+    /* Margin-left: 20px'e kadar gelir */
+    opacity: 1;
+  }
+}
+
+#telefonunuz h1 {
+  font-size: 6rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #fff;
+
+}
+
+#telefonunuz h2 {
+  font-size: 4rem;
+  margin-bottom: 25px;
+  color: white;
+  line-height: 3rem;
+  margin-left: 10px;
+}
+
+#talepButtonLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+#talep-olustur {
+  font-size: 3rem;
+  padding: 20px 30px;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 40px;
+  overflow: visible;
+  /* Taşmaları kontrol etmek için */
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#talep-olustur:hover {
+  background-color: rgb(172, 85, 169);
+  color: black;
+  border-color: black;
+  box-shadow: 0 10px 15px rgba(181, 126, 179, 0.5), 0 -10px 15px rgba(181, 126, 179, 0.5), 10px 0 15px rgba(181, 126, 179, 0.5), -10px 0 15px rgba(181, 126, 179, 0.5);
+}
+
+
+/* Sağdaki telefon görseli */
+#telefonunuz .image-container {
+  max-width: 60%;
+  text-align: right;
+  margin-top: 90px;
+}
+
+#telefonunuz .image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+#kampanyalar {
+  background-color: #3f353c;
+  padding: 50px 50px;
+  margin-top: 10px;
+  /* Üst kısmında boşluk */
+  margin-bottom: 50px;
+  /* Alt kısmında boşluk */
+  height: 100hv;
+}
+
+/* Kampanyalar başlığı stil */
+#kampanyalar h1 {
+  text-align: center;
+  /* Başlığı ortalar */
+  font-size: 7rem;
+  margin-bottom: 50px;
+  /* Slider ile aradaki boşluk */
+  margin-top: 20px;
+  /* Üstteki alan ile boşluk */
+  color: white;
+  /* Başlık rengini belirler */
+}
+
+#kampanyalar h3 {
+  text-align: center;
+  /* Başlığı ortalar */
+  font-size: 3rem;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  color: white;
+  /* Başlık rengini belirler */
+
+}
+
+.carousel-inner {
+  background-color: white !important;
+  /* Slider içindeki arka planı siyah yap */
+}
+
+
+.carousel-indicators li {
+  background-color: white;
+  /* Göstergelerin rengini beyaz yap */
+}
+
+.carousel-control {
+  color: white;
+  /* Sağ ve sol okların rengini beyaz yap */
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Okların arkasındaki siyah zemin */
+}
+
+.icon-container {
+  display: flex;
+  align-items: center; /* Yatay eksende aynı yükseklikte hizalar */
+  justify-content: space-between; /* Yazı ortada, ikon sağda olacak şekilde hizalama */
+}
+
+.add-icon {
+  display: inline-block;
+  font-size: 70px;
+  cursor: pointer;
+  margin-right: auto; 
+}
+
+.icon-container h3 {
+  margin: 0; 
+  font-size: 18px; 
+  text-align: center; 
+  flex-grow: 1; 
+}
+
+
+
+
+
+
+#kampanyalar {
+  background-color: #3f353c;
+  padding: 50px 50px;
+  margin-top: 10px;
+  /* Üst kısmında boşluk */
+  margin-bottom: 50px;
+  /* Alt kısmında boşluk */
+  height: 100hv;
+}
+
+/* Kampanyalar başlığı stil */
+#kampanyalar h1 {
+  text-align: center;
+  /* Başlığı ortalar */
+  font-size: 7rem;
+  margin-bottom: 50px;
+  /* Slider ile aradaki boşluk */
+  margin-top: 20px;
+  /* Üstteki alan ile boşluk */
+  color: white;
+  /* Başlık rengini belirler */
+}
+
+#kampanyalar h3 {
+  text-align: center;
+  /* Başlığı ortalar */
+  font-size: 3rem;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  color: white;
+  /* Başlık rengini belirler */
+
+}
+
+.carousel-inner {
+  background-color: white !important;
+  /* Slider içindeki arka planı siyah yap */
+}
+
+
+.carousel-indicators li {
+  background-color: white;
+  /* Göstergelerin rengini beyaz yap */
+}
+
+.carousel-control {
+  color: white;
+  /* Sağ ve sol okların rengini beyaz yap */
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Okların arkasındaki siyah zemin */
+}
+
+
+
+
+/* Neden Cep Kurye Kısmı */
+.neden-cepkurye {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100vh;
+  /* Tüm ekran yüksekliği */
+  background-color: #121111;
+  /* Arka plan rengi */
+  color: #fff;
+  padding: 0 50px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.neden-cepkurye .content {
+  text-align: left;
+  /* Metni ortaya hizalar */
+}
+
+.neden-cepkurye h1 {
+  font-size: 6rem;
+  margin-bottom: 70px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.neden-cepkurye h2 {
+  font-size: 3.5rem;
+  margin-bottom: 25px;
+  margin-top: 70px;
+  color: white;
+  line-height: 2.5rem;
+}
+
+.neden-cepkurye h3 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: white;
+
+}
+
+.neden-cepkurye ul {
+  list-style-type: none;
+  padding: 0;
+  color: white;
+}
+
+.neden-cepkurye ul li {
+  font-size: 3rem;
+  margin: 5px 0;
+}
+
+
+
+
+/* Kutular Kısmı */
+.boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 50vh;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.box .icon {
+  width: 60px; /* İkon boyutunu büyüttük */
+  height: 60px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Taşmaları engellemek için */
+  transition: transform 0.3s ease;
+}
+
+.box .icon img {
+  width: 100%; /* İkon genişliğini kutu boyutuna uyarladık */
+  height: 100%; /* Yüksekliği genişlik ile eşledik */
+  object-fit: cover; /* Görsellerin tamamı aynı boyutta olacak şekilde kırpıldı */
+}
+
+.box h3 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.box p {
+  font-size: 1.8rem;
+  max-width: 80%;
+  line-height: 1.5;
+  transition: transform 0.3s ease;
+}
+
+/* Kutuların Renklendirilmesi */
+.box:nth-child(1) {
+  background-color: #ff5722;
+}
+
+.box:nth-child(2) {
+  background-color: #7e57c2;
+}
+
+.box:nth-child(3) {
+  background-color: #ec407a;
+}
+
+.box:nth-child(4) {
+  background-color: #03a9f4;
+}
+
+/* Hover Efekti (Yazılar ve Görseller Yukarı Hareket Eder) */
+.box:hover .icon,
+.box:hover h3,
+.box:hover p {
+  transform: translateY(-30px);
+}
+
+
+
+
+/* Tamir Hizmetleri Bölümü */
+.tamir-hizmetleri {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #3f353c;
+}
+
+.tamir-hizmetleri h2 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.service-item {
+  flex: 0 0 20%;
+  /* Ekranın yüzde 20'sini kaplasın */
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+  background-color: #cdbac8;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-item:hover {
+  background-color: rgb(172, 85, 169);
+  color: black;
+
+}
+
+/* Hizmet Verdiğimiz Markalar */
+.hizmet-marka {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #3f353c;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.hizmet-marka h2 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.hizmet-marka p {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Markalar Bölümü Düzenlemesi */
+.markalar {
+  display: flex;
+  /* Flexbox kullanımı */
+  justify-content: center;
+  /* Ortala */
+  flex-wrap: wrap;
+  /* Taşan logoları bir alt satıra taşı */
+  gap: 30px;
+  /* Aralarına boşluk ekle */
+}
+
+.marka {
+  display: flex;
+  /* Her logoyu kapsayıcı içine hizalamak için */
+  align-items: center;
+  /* Dikey merkezleme */
+  justify-content: center;
+  /* Yatay merkezleme */
+  width: 120px;
+  /* Sabit genişlik */
+  height: 120px;
+  /* Sabit yükseklik */
+  background-color: transparent;
+  /* Hafif gri zemin */
+  border-radius: 8px;
+
+}
+
+.marka img {
+  max-width: 80%;
+  /* Logoların genişliği */
+  max-height: 80%;
+  /* Logoların yüksekliği */
+  object-fit: contain;
+  /* Görsellerin orantısını koru */
+}
+
+
+
+
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
+  font-size: 1.5rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.footer-column {
+  width: 30%;
+  text-align: center;
+}
+
+/* Logo */
+.footer-logo {
+  max-width: 150px !important;
+  /* Logo boyutunu belirgin şekilde büyüt */
+  height: auto !important;
+  /* Oranını koruyarak yükseklik ayarla */
+  display: block;
+  margin: 0 auto 10px;
+  /* Ortala ve altına boşluk ekle */
+}
+
+/* Footer Bağlantıları */
+.footer-link {
+  font-size: 1.2rem;
+  color: rgb(172, 85, 169);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 5px 0;
+}
+
+.footer-column ul ul li {
+  margin-left: 15px;
+}
+
+.footer-column a {
+  color: rgb(172, 85, 169);
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+/* Sosyal Medya İkonları */
+.footer-column img {
+  width: 24px;
+  /* İkon boyutunu küçült */
+  height: 24px;
+  margin: 0 5px;
+  /* Aralarına boşluk ekle */
+  filter: invert(1);
+  /* Beyaz renge dönüştür */
+}
+
+.footer-column img:hover {
+  opacity: 0.8;
+  /* Hover durumunda biraz şeffaflık ekleyin */
+}
+
+/* Footer Alt Kısım */
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  background-color: #cdbac8;
+  color: #000;
+}
+
+/* Mesajlaşma Ikonu */
+.message-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.message-icon img {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  /* Hafif bir gölge efekti */
+  transition: 0.3s;
+}
+
+.message-icon img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+}
+

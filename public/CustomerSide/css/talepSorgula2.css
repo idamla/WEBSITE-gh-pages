@@ -1,10 +1,13 @@
+/* Genel Stiller */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000;
+  background-color: #3f353c;
   color: #fff;
+  overflow-x: hidden;
 }
+
 
 /* Header */
 header {
@@ -60,48 +63,10 @@ header nav ul li a {
 }
 
 header nav ul li:hover a {
-  background-color: #444;
+  background-color: transparent;
   /* Hover rengi */
-  color: #f0c040;
-}
-
-header nav ul li .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  /* Menüye hemen altına yerleştir */
-  left: 0;
-  background-color: #333;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  padding: 10px 0;
-  min-width: 200px;
-  /* Genişlik */
-  z-index: 1000;
-}
-
-/* Dropdown linklerinin stilleri */
-header nav ul li .dropdown-content a {
-  color: white;
+  color: rgb(172, 98, 169);
   text-decoration: none;
-  padding: 15px 25px;
-  /* İç boşluğu artırdım */
-  display: block;
-  font-size: 1.8rem;
-  /* Dropdown bağlantı yazı boyutunu büyüttüm */
-  font-weight: normal;
-}
-
-header nav ul li:hover .dropdown-content {
-  display: block;
-  /* Hover sırasında dropdown'ı göster */
-}
-
-header nav ul li .dropdown-content a:hover {
-  background-color: #444;
-  /* Hover sırasında dropdown linki rengini değiştir */
-  color: #f0c040;
-  /* Hover rengini değiştirdim */
 }
 
 
@@ -122,11 +87,36 @@ header .auth-buttons a {
 }
 
 header .auth-buttons a:hover {
-  background-color: #f27A1A;
-  color: white;
-  border-color: white;
+  background-color: rgb(172, 85, 169);
+  color: black;
+  border-color: black;
+  box-shadow: 0 5px 10px rgba(181, 126, 179, 0.5), 0 -5px 10px rgba(181, 126, 179, 0.5), 5px 0 10px rgba(181, 126, 179, 0.5), -5px 0 10px rgba(181, 126, 179, 0.5);
 }
 
+
+
+/* Ana İçerik Alanı */
+.hakkimizda-container {
+  width: 100%;
+  height:150px;
+  margin: 20px auto;
+  background-color: #000;
+  color: #fff;
+  padding: 30px;
+  border-radius: 0;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 160px;
+}
+
+.title {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  margin-top:25px;
+  font-weight: bold;
+  
+}
 
 
 
@@ -135,7 +125,7 @@ header .auth-buttons a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 60vh;
   text-align: center;
 }
 
@@ -152,6 +142,11 @@ h1 {
   width: 90%;
   max-width: 500px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.search-box:hover {
+  transform: scale(1.05);
 }
 
 .search-box input {
@@ -162,18 +157,14 @@ h1 {
   outline: none;
   font-size: 16px;
   pointer-events: auto;
-  /* Tıklanabilir yap */
   z-index: 1;
-  /* Üstte olmasını sağla */
   position: relative;
-  /* Gerekirse konumlandırmayı ayarla */
   color: black;
 }
 
-
 .search-box button {
-  background-color: #ffc107;
-  border: none;
+  background-color: rgb(172, 98, 169);
+  border: 1px solid transparent;
   border-radius: 50px;
   padding: 10px 20px;
   font-size: 16px;
@@ -183,8 +174,11 @@ h1 {
 }
 
 .search-box button:hover {
-  background-color: #e0a800;
+  background-color: rgb(172, 85, 169);
+  color:black;
+  border-color:black;
 }
+
 
 
 
@@ -222,7 +216,7 @@ footer {
 /* Footer Bağlantıları */
 .footer-link {
   font-size: 1.2rem;
-  color: #ffdd00;
+  color: rgb(172, 85, 169);
   text-decoration: none;
 }
 
@@ -244,7 +238,7 @@ footer {
 }
 
 .footer-column a {
-  color: #ffdd00;
+  color: rgb(172, 85, 169);
   text-decoration: none;
 }
 
@@ -272,7 +266,7 @@ footer {
 .footer-bottom {
   text-align: center;
   padding: 10px;
-  background-color: #fff;
+  background-color: #cdbac8;
   color: #000;
 }
 

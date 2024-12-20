@@ -21,12 +21,12 @@
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
 
-<body class="main page-loading animation">
+<body>
     <!-- Header -->
     <header>
         <!-- Logo -->
         <div class="logo">
-            <a href="../../../index.html">
+            <a href="/index.html">
                 <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
                     width="150">
             </a>
@@ -46,29 +46,19 @@
 
         <!-- Login Button -->
         <div class="auth-buttons">
-            <a href="giris.html" class="giris-btn">Giriş Yap</a>
+            <a href="giris.html" class="giris-btn"><b>Giriş Yap</b></a>
         </div>
     </header>
 
 
+    <!-- Ana İçerik Alanı -->
+    <div class="hakkimizda-container">
+        <h2 class="title">SIKÇA SORULAN SORULAR</h2>
+    </div>
     <div class="container">
-        <div class="faq">       <!--SAKIN İKİ KERE YAZMIŞ BUNU DİYİP SİLME ANCAK BÖYLE OLUNCA İLK MADDE GÖZRÜNÜYO NEDENİNİ ÇÖZEMEDİMA AMA BÖYLE OLUNCA NASILSA ÇALIŞIYO-->
-            <h2>TELEFON TAMİRİ HANGİ HİZMETLERİ SUNUYOR?</h2>
-            <p>telefon Tamiri garanti dahili ve harici tamirleri sağlayan akıllı telefon ve mobil cihaz
-                servisidir. Telefon Tamiri'ni diğer firmalardan ayıran özelliği ise kapınıza gelip
-                akkılı cihazınızı alması, size yedek telefon vermesi, şehir dışı ise ücretsiz kargo ile cihazınızı
-                kapınızdan teslim alması ve müşterisini bütün tamir sürecinden haberdar etmesidir.
-            </p>
-
-            <button type="button" class="btn">
-                <i class="fa-solid fa-chevron-down"></i>
-                <i class="fa-solid fa-chevron-up"></i>
-            </button>
-        </div>
-
         <div class="faq">
             <h2>TELEFON TAMİRİ HANGİ HİZMETLERİ SUNUYOR?</h2>
-            <p>telefon Tamiri garanti dahili ve harici tamirleri sağlayan akıllı telefon ve mobil cihaz
+            <p>Telefon Tamiri garanti dahili ve harici tamirleri sağlayan akıllı telefon ve mobil cihaz
                 servisidir. Telefon Tamiri'ni diğer firmalardan ayıran özelliği ise kapınıza gelip
                 akkılı cihazınızı alması, size yedek telefon vermesi, şehir dışı ise ücretsiz kargo ile cihazınızı
                 kapınızdan teslim alması ve müşterisini bütün tamir sürecinden haberdar etmesidir.
@@ -79,6 +69,7 @@
                 <i class="fa-solid fa-chevron-up"></i>
             </button>
         </div>
+
 
         <div class="faq">
             <h2>TELEFON TAMİRİ'Nİ NASIL KULLANABİLİRİM?</h2>
@@ -120,7 +111,7 @@
             </button>
         </div>
 
-        
+
         <div class="faq">
             <h2>TELEFONUMUN DURUMUNU NASIL ÖĞRENEBİLİRİM?</h2>
             <p>Telefon Tamiri'ne telefon talebinde bulunduktan sonra bir takip numarası tarafınıza
@@ -133,9 +124,9 @@
                 <i class="fa-solid fa-chevron-up"></i>
             </button>
         </div>
-        
+
         <div class="faq">
-            <h2>TELEFON TAMİRİ GARANTİSİNİN DETAYLARI NELERDİR?</h2>
+            <h2>TELEFON TAMİRİ GARANTİ DETAYLARI NELERDİR?</h2>
             <p>Telefon Tamiri, garanti hizmeti haricinde tamirlerde müşterilerimize 6 ay parça garantisidri.
                 Örneğin tamir işleminde telefonunuzun kamerası değişmiş ise bu parçanın 6 ay garantisi
                 tarafımızdan size verilmektedir. Parçayla ilgili sorun yaşamanız halinde ücretsiz değişim
@@ -183,15 +174,12 @@
             faq.addEventListener('click', (e) => {
                 let cont = e.target.closest(".faq");
                 if (cont.classList.contains("active")) {
-                    console.log("if içi");
-                    cont.classList.remove("active")
-                    console.log(faq);
+                    cont.classList.remove("active");
                 } else {
                     closeAll();
-                    console.log("if dışı");
                     cont.classList.add('active');
                 }
-            })
+            });
         });
 
         function closeAll() {
@@ -200,6 +188,7 @@
                 cont.classList.remove('active');
             })
         };
+
     </script>
 
     <!-- Footer -->
@@ -209,18 +198,13 @@
             <div class="footer-column">
                 <h3>Telefon Tamiri</h3>
                 <ul>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-olustur">Tamir Talebi Oluştur</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-sorgula">Tamir Talebi Sorgula</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/aksesuar-ve-ek-ürünler">Aksesuarlar ve Ek
+                    <li><a href="/public/CustomerSide/html/talepOlustur.html">Talep Oluştur</a></li>
+                    <li><a href="/public/CustomerSide/html/talepSorgula2.html">Talep Sorgula</a></li>
+                    <li><a href="/public/CustomerSide/html/products.html">Aksesuar ve Ek
                             Ürünler</a></li>
-                    <li>Hakkımızda</li>
-                    <ul>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/sikca-sorulan-sorular">SSS</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/medya-ve-fotograf">Medya ve
-                                Fotoğraflar</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/yorumlar">Yorumlar</a></li>
-                        <li><a href="https://telefon-tamiri-seng209-211.com.tr/iletisim">İletişim</a></li>
-                    </ul>
+                    <li><a href="/public/CustomerSide/html/hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="/public/CustomerSide/html/SSS.html">SSS</a></li>
+
                 </ul>
             </div>
             <!-- Orta Sütun -->
@@ -255,6 +239,7 @@
             <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454733_640.png" alt="Mesajlaşma İkonu">
         </a>
     </div>
+
 
 </body>
 

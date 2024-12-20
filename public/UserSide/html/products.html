@@ -21,10 +21,8 @@
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
 
-<body class="main page-loading animation">
-    <!-- Header -->
+<body>
     <header>
-        <!-- Logo -->
         <div class="logo">
             <a href="dashboard.html">
                 <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
@@ -49,16 +47,44 @@
                     </div>
                 </li>
             </ul>
-        
+
         </nav>
 
     </header>
 
-    <h1 class="main-title">Mağazadaki Ürünler</h1>
+
+
+
+    <div class="hakkimizda-container">
+        <h2 class="title">AKSESUAR VE EK ÜRÜNLER</h2>
+    </div>
+
+
+    <div class="filters">
+        <div class="categories">
+            <label for="category-select">Kategoriler:</label>
+            <select id="category-select">
+                <option value="all">Tüm Ürünler</option>
+                <option value="cases">Telefon Kılıfları</option>
+                <option value="chargers">Şarj Cihazları</option>
+                <option value="headphones">Kulaklıklar</option>
+                <option value="car-accessories">Araç Aksesuarları</option>
+                <option value="others">Diğer Ürünler</option>
+            </select>
+        </div>
+        <div class="sorting">
+            <label for="sort-select">Sırala:</label>
+            <select id="sort-select">
+                <option value="desc">En Pahalıdan En Ucuza</option>
+                <option value="asc">En Ucuzdan En Pahalıya</option>
+            </select>
+        </div>
+    </div>
+
+
     <div class="products">
         <div class="product-card">
-            <img src="https://coflex.com.tr/wp-content/uploads/2021/01/resim-yok.jpg"
-                alt="Ürün 1">
+            <img src="https://coflex.com.tr/wp-content/uploads/2021/01/resim-yok.jpg" alt="Ürün 1">
             <div class="product-info">
                 <h3>Ürün Adı: XXXX</h3>
                 <p class="price">Fiyat: XXXX TL</p>
@@ -67,8 +93,7 @@
             </div>
         </div>
         <div class="product-card">
-            <img src="https://coflex.com.tr/wp-content/uploads/2021/01/resim-yok.jpg"
-                alt="Ürün 2">
+            <img src="https://coflex.com.tr/wp-content/uploads/2021/01/resim-yok.jpg" alt="Ürün 2">
             <div class="product-info">
                 <h3>Ürün Adı: XXXX</h3>
                 <p class="price">Fiyat: XXXX TL</p>
@@ -77,8 +102,7 @@
             </div>
         </div>
         <div class="product-card">
-            <img src="https://coflex.com.tr/wp-content/uploads/2021/01/resim-yok.jpg"
-                alt="Ürün 3">
+            <img src="https://coflex.com.tr/wp-content/uploads/2021/01/resim-yok.jpg" alt="Ürün 3">
             <div class="product-info">
                 <h3>Ürün Adı: XXXX</h3>
                 <p class="price">Fiyat: XXXX TL</p>
@@ -87,8 +111,7 @@
             </div>
         </div>
         <div class="product-card">
-            <img src="https://coflex.com.tr/wp-content/uploads/2021/01/resim-yok.jpg"
-                alt="Ürün 4">
+            <img src="https://coflex.com.tr/wp-content/uploads/2021/01/resim-yok.jpg" alt="Ürün 4">
             <div class="product-info">
                 <h3>Ürün Adı: XXXX</h3>
                 <p class="price">Fiyat: XXXX TL</p>
@@ -97,6 +120,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="pagination">
         <a href="#">1</a>
@@ -104,6 +128,7 @@
         <a href="#">3</a>
         <a href="#">&raquo;</a>
     </div>
+
 
 
 
@@ -155,10 +180,12 @@
         </a>
     </div>
 
+
     <!-- Ekleme Ikonu -->
     <div class="add-icon">
-        <a href="addProduct.html" target="_blank">    <!--Ürün ekleme kısmına yönlendirilecek-->
-            <img src="https://st2.depositphotos.com/1006689/10140/v/950/depositphotos_101406658-stock-illustration-plus-cross-sign-vector-icon.jpg" alt="Ekleme Ikonu">
+        <a href="addProduct.html" target="_blank"> <!--Ürün ekleme kısmına yönlendirilecek-->
+            <img src="https://st2.depositphotos.com/1006689/10140/v/950/depositphotos_101406658-stock-illustration-plus-cross-sign-vector-icon.jpg"
+                alt="Ekleme Ikonu">
         </a>
     </div>
 
