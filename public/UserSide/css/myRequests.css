@@ -234,23 +234,30 @@ table tbody tr td a:hover {
 
 
 
-/* SAYFALAMA */
+/* Sayfalama */
 .pagination {
-  text-align: center;
-  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  margin-top: 100px;
 }
 
-.pagination a,
-.pagination span {
-  margin: 0 5px;
+.pagination a {
+  color: white;
   text-decoration: none;
-  color: #000;
-  font-weight: bold;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .pagination a:hover {
-  color: #e6b800;
+  background-color: #f9e5f3;
+  color: black;
+  border-color:black;
 }
+
 
 
 
