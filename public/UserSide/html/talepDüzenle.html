@@ -21,10 +21,9 @@
     <!-- URL LİNKİNİ DAHA GÜZEL BİR ŞEY YAP PLS-->
 </head>
 
-<body class="main page-loading animation">
-    <!-- Header -->
+
+<body>
     <header>
-        <!-- Logo -->
         <div class="logo">
             <a href="dashboard.html">
                 <img src="https://img.pikbest.com/origin/09/23/99/24DpIkbEsTkVb.png!sw800" alt="Telefon Tamiri"
@@ -49,95 +48,99 @@
                     </div>
                 </li>
             </ul>
-        
+
         </nav>
 
     </header>
 
+    <div class="hakkimizda-container">
+        <h2 class="title">TALEP DÜZENLE</h2>
+    </div>
+    <section id="talepDuzenle">
+        <div class="form-container">
+            <form>
+                <!-- Talep numarası -->
+                <div class="form-row">
+                    <label for="talepNo">Talep numarası:</label>
+                    <input type="text" id="talepNo" value="3457867" readonly>
+                </div>
+                <!-- Müşteri Adı -->
+                <div class="form-row">
+                    <label for="musteriAdi">Müşteri Adı:</label>
+                    <input type="text" id="musteriAdi" value="Ayse Atik">
+                </div>
+                <!-- Telefon Modeli -->
+                <div class="form-row">
+                    <label for="model">Telefon Modeli:</label>
+                    <input type="text" id="model" value="Huawei A7">
+                </div>
+                <!-- Telefon No -->
+                <div class="form-row">
+                    <label for="telefonNo">Telefon No:</label>
+                    <input type="text" id="telefonNo">
+                </div>
+                <!-- Adresi -->
+                <div class="form-row">
+                    <label for="adres">Adresi:</label>
+                    <input type="text" id="adres">
+                </div>
+                <!-- IMEI Numarası -->
+                <div class="form-row">
+                    <label for="imei">Cihazın IMEI Numarası:</label>
+                    <input type="text" id="imei">
+                </div>
+                <!-- Cihazın Tuş Kilidi -->
+                <div class="form-row">
+                    <label for="kilit">Cihazın Tuş Kilidi:</label>
+                    <input type="text" id="kilit">
+                </div>
+                <!-- Cihazın Geliş Tarihi -->
+                <div class="form-row">
+                    <label for="gelisTarihi">Cihazın Geliş Tarihi:</label>
+                    <input type="date" id="gelisTarihi">
+                </div>
+                <!-- Problem -->
+                <div class="form-row">
+                    <label for="problem">Problem:</label>
+                    <input type="text" id="problem">
+                </div>
+                <!-- Durumu -->
+                <div class="form-row">
+                    <label for="durum">Durumu:</label>
+                    <select id="durum">
+                        <option>Durumu Güncelleyin</option>
+                    </select>
+                </div>
 
-    <div class="form-container">
-        <form>
-            <!-- Talep numarası -->
-            <div class="form-row">
-                <label for="talepNo">Talep numarası:</label>
-                <input type="text" id="talepNo" value="3457867" readonly>
-            </div>
-            <!-- Müşteri Adı -->
-            <div class="form-row">
-                <label for="musteriAdi">Müşteri Adı:</label>
-                <input type="text" id="musteriAdi" value="Ayse Atik">
-            </div>
-            <!-- Telefon Modeli -->
-            <div class="form-row">
-                <label for="model">Telefon Modeli:</label>
-                <input type="text" id="model" value="Huawei A7">
-            </div>
-            <!-- Telefon No -->
-            <div class="form-row">
-                <label for="telefonNo">Telefon No:</label>
-                <input type="text" id="telefonNo">
-            </div>
-            <!-- Adresi -->
-            <div class="form-row">
-                <label for="adres">Adresi:</label>
-                <input type="text" id="adres">
-            </div>
-            <!-- IMEI Numarası -->
-            <div class="form-row">
-                <label for="imei">Cihazın IMEI Numarası:</label>
-                <input type="text" id="imei">
-            </div>
-            <!-- Cihazın Tuş Kilidi -->
-            <div class="form-row">
-                <label for="kilit">Cihazın Tuş Kilidi:</label>
-                <input type="text" id="kilit">
-            </div>
-            <!-- Cihazın Geliş Tarihi -->
-            <div class="form-row">
-                <label for="gelisTarihi">Cihazın Geliş Tarihi:</label>
-                <input type="date" id="gelisTarihi">
-            </div>
-            <!-- Problem -->
-            <div class="form-row">
-                <label for="problem">Problem:</label>
-                <input type="text" id="problem">
-            </div>
-            <!-- Durumu -->
-            <div class="form-row">
-                <label for="durum">Durumu:</label>
-                <select id="durum">
-                    <option>Durumu Güncelleyin</option>
-                </select>
-            </div>
+                <!-- Yapılan İşlem -->
+                <div class="form-row">
+                    <label for="yapilan">Yapılan İşlem:</label>
+                    <input type="text" id="yapilan">
+                </div>
+                <!-- Ücret -->
+                <div class="form-row">
+                    <label for="ucret">Ücret:</label>
+                    <input type="text" id="ucret">
+                </div>
+                <!-- Servisin onarım açıklaması -->
+                <div class="form-row-large">
+                    <label for="aciklama">Servisin onarım açıklaması:</label>
+                    <textarea id="aciklama" rows="3" placeholder="Açıklamayı giriniz"></textarea>
+                </div>
 
-            <!-- Yapılan İşlem -->
-            <div class="form-row">
-                <label for="yapilan">Yapılan İşlem:</label>
-                <input type="text" id="yapilan">
-            </div>
-            <!-- Ücret -->
-            <div class="form-row">
-                <label for="ucret">Ücret:</label>
-                <input type="text" id="ucret">
-            </div>
-            <!-- Servisin onarım açıklaması -->
-            <div class="form-row-large">
-                <label for="aciklama">Servisin onarım açıklaması:</label>
-                <textarea id="aciklama" rows="3" placeholder="Açıklamayı giriniz"></textarea>
-            </div>
-
-            <!-- Hakediş durumu 
+                <!-- Hakediş durumu 
             <div class="form-row-large">
                 <label for="hakedis">Hakediş durumu:</label>
                 <textarea id="hakedis" rows="3" placeholder="Açıklamayı giriniz"></textarea>
             </div> -->
-            <!-- Butonlar -->
-            <div class="button-container">
-                <button type="button" class="save-btn">KAYDET</button>
-                <button type="button" class="print-btn">YAZDIR</button>
-            </div>
-        </form>
-    </div>
+                <!-- Butonlar -->
+                <div class="button-container">
+                    <button type="button" class="save-btn">KAYDET</button>
+                    <button type="button" class="print-btn">YAZDIR</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
 
     <!-- Footer -->
@@ -147,12 +150,13 @@
             <div class="footer-column">
                 <h3>Telefon Tamiri</h3>
                 <ul>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-olustur">Talep Oluştur</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/talep-sorgula">Talep Sorgula</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/aksesuar-ve-ek-ürünler">Aksesuar ve Ek
+                    <li><a href="/public/CustomerSide/html/talepOlustur.html">Talep Oluştur</a></li>
+                    <li><a href="/public/CustomerSide/html/talepSorgula2.html">Talep Sorgula</a></li>
+                    <li><a href="/public/CustomerSide/html/products.html">Aksesuar ve Ek
                             Ürünler</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/hakkımızda">Hakkımızda</a></li>
-                    <li><a href="https://telefon-tamiri-seng209-211.com.tr/sikca-sorulan-sorular">SSS</a></li>
+                    <li><a href="/public/CustomerSide/html/hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="/public/CustomerSide/html/SSS.html">SSS</a></li>
+
                 </ul>
             </div>
             <!-- Orta Sütun -->

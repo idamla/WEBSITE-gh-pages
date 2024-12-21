@@ -219,8 +219,8 @@ input[type="file"]:hover {
     transition: all 0.3s ease;
     margin: 40px auto 40px;
     display: block;
-    /* Ortalamak için block yap */
     text-align: center;
+
 
 }
 
@@ -228,10 +228,8 @@ input[type="file"]:hover {
     background-color: rgb(172, 85, 169);
     color: black;
     border: 1px solid black;
-    box-shadow: 0 5px 10px rgba(20, 20, 20, 0.7),
-        0 -5px 10px rgba(20, 20, 20, 0.7),
-        5px 0 10px rgba(20, 20, 20, 0.7),
-        -5px 0 10px rgba(20, 20, 20, 0.7);
+    box-shadow: 0 5px 10px rgba(181, 126, 179, 0.5), 0 -5px 10px rgba(181, 126, 179, 0.5), 5px 0 10px rgba(181, 126, 179, 0.5), -5px 0 10px rgba(181, 126, 179, 0.5);
+
 }
 
 .ekle-btn:active {
