@@ -71,11 +71,8 @@ header nav ul li:hover a {
 /* Giriş Butonu */
 header .auth-buttons a {
   font-size: 2rem;
-  /* Menü bağlantı yazı boyutunu büyüttüm */
-  /* Yazı boyutunu büyüttüm */
   margin: 0 10px;
   padding: 10px 25px;
-  /* Daha geniş buton */
   text-decoration: none;
   border-radius: 25px;
   background-color: white;
